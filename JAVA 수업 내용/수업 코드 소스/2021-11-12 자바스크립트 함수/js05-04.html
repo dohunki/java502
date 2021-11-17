@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 5일차 4번</title>
+    <script>
+        // 문제 1) 2개의 숫자를 사칙연산으로 연산하는 프로그램을 함수 형태 1 ~ 4 모두 생성하여 계산하는 프로그램을 작성하세요
+        // 반환값이 있는 경우에는 함수 내부에서 화면 출력을 하지 않고, 결과만 반환받아 외부에서 화면 출력하도록 함
+        // 함수명 :
+        // 1번형태 - sum1(), sub1(), multi1(), div1()
+        function sum1() {
+            var a = 10;
+            var b = 20;
+            var c = a + b;
+            console.log("두 수의 덧셈은 : " + c);
+        }
+        function  sub1() {
+            var a = 10;
+            var b = 20;
+            var c = a - b;
+            console.log("두 수의 뺄셈은 : " + c);
+        }
+        function multi1() {
+            var a = 10;
+            var b = 20;
+            var c = a * b;
+            console.log("두 수의 곱셈은 : " + c);
+        }
+        function div1() {
+            var a = 10;
+            var b = 3;
+            var c = a / b;
+            console.log("두 수의 나눗셈은 : " + c);
+        }
+
+        sum1();
+        sub1();
+        multi1();
+        div1();
+
+        // 2번형태 - sum2(a, b), sub2(a, b), multi2(a, b), div2(a, b)
+        function sum2(a, b) {
+            var c = a + b;
+            console.log("두 수의 덧셈은 : " + c);
+        }
+        function sub2(a, b) {
+            var c = a - b;
+            console.log("두 수의 뺄셈은 : " + c);
+        }
+        function multi2(a, b) {
+            var c = a * b;
+            console.log("두 수의 곱셈은 : " + c);
+        }
+        function div2(a, b) {
+            var c = a / b;
+            console.log("두 수의 나눗셈은 : " + c);
+        }
+
+        sum2(10, 20);
+        sub2(10, 20);
+        multi2(10, 20);
+        div2(10, 3);
+
+        // 3번형태 - sum3(), sub3(), multi3(), div3()
+        function sum3() {
+            var a = 10;
+            var b = 20;
+            var c = a + b;
+            return c;
+        }
+        function sub3() {
+            var a = 10;
+            var b = 20;
+            var c = a - b;
+            return c;
+        }
+        function multi3() {
+            var a = 10;
+            var b = 20;
+            var c = a * b;
+            return c;
+        }
+        function div3() {
+            var a = 10;
+            var b = 20;
+            var c = a / b;
+            return c;
+        }
+
+        var result3sum = sum3();
+        var result3sub = sub3();
+        var result3multi = multi3();
+        var result3div = div3();
+        console.log("두 수의 덧셈은 : " + result3sum);
+        console.log("두 수의 뺄셈은 : " + result3sub);
+        console.log("두 수의 곱셈은 : " + result3multi);
+        console.log("두 수의 나눗셈은 : " + result3div);
+        // 4번형태 - sum4(a, b), sub4(a, b), multi4(a, b), div4(a, b)
+        function sum4(a, b){
+            var c = a + b;
+            return c;
+        }
+        function sub4(a, b) {
+            var c = a - b;
+            return c;
+        }
+        function multi4(a, b) {
+            var c = a * b;
+            return c;
+        }
+        function div4(a, b) {
+            var c = a / b;
+            return c;
+        }
+
+        var result4sum = sum4(10, 20);
+        var result4sub = sub4(10, 20);
+        var result4multi = multi4(10, 20);
+        var result4div = div4(10, 3);
+        console.log("두 수의 덧셈은 : " + result4sum);
+        console.log("두 수의 뺄셈은 : " + result4sub);
+        console.log("두 수의 곱셈은 : " + result4multi);
+        console.log("두 수의 나눗셈은 : " + result4div);
+
+        console.log("\n\n-----------------------------------------------\n\n");
+        // 문제 2) 점수를 입력받아 성적 등급을 출력하는 프로그램을 작성하세요
+        // A : 90이상, B : 80이상, C : 70이상, D : 60이상, F : 60미만
+        // 출력형태 : '당신의 점수는 xx점 이고, x학점 입니다.'
+        // 성적 등급을 나누는 로직 부분을 함수로 처리해야 함
+        function grade() {
+            if (score >= 90) {
+                level = "A";
+                // console.log("당신의 점수는 " + score + "점이고, A학점 입니다.");
+            }
+            else if (score >= 80) {
+                level = "B";
+                // console.log("당신의 점수는 " + score + "점이고, B학점 입니다.");
+            }
+            else if (score >= 70) {
+                level = "C";
+                // console.log("당신의 점수는 " + score + "점이고, C학점 입니다.");
+            }
+            else if (score >= 60) {
+                level = "D";
+                // console.log("당신의 점수는 " + score + "점이고, D학점 입니다.");
+            }
+            else {
+                level = "F";
+                // console.log("당신의 점수는 " + score + "점이고, F학점 입니다.");
+            }
+        }
+
+        // 점수 입력 부분
+        var score = prompt("점수를 입력해주세요");
+        score = Number(score);
+        var level = ""; // 점수에 따른 학점 등급 저장 변수
+
+        grade();
+        console.log("당신의 점수는 " + score + "점이고, " + level + "학점 입니다.");
+
+        console.log("\n\n-----------------------------------------------\n\n");
+        // 문제 3) 사용자 입력을 통해서 원하는 단수의 구구단을 출력하는 프로그램을 작성하세요
+        // 입력받는 숫자 : 1 ~ 9
+        // 사용자 입력 부분과 구구단 출력 부분을 함수로 처리해야 함
+
+        // 사용자 입력 부분
+        function inputGugudan() {
+            // 지역 변수 dan 선언, 사용자 입력 정보 저장
+            var dan = prompt("출력한 구구단의 단수를 숫자로 입력해주세요", 5);
+            dan = Number(dan);
+
+            return dan;
+        }
+
+        // 구구단 출력부분
+        function outputGugudan(dan) {
+            for (var i = 1; i < 10; i++) {
+                console.log(dan + " * " + i + " = " + dan * i);
+            }
+        }
+
+        var dansu = inputGugudan();
+        outputGugudan(dansu);
+
+
+        console.log("\n\n-----------------------------------------------\n\n");
+        // 문제 4) 사용자 입력을 통해서 점수를 입력받고 점수의 총합과 평균을 구하는 프로그램을 작성하세요
+        // 사용자 입력 부분, 총합, 평균, 화면 출력 부분을 모두 함수로 처리해야 함
+        // 전역 변수는 scores, total, avg를 선언해서 사용
+        // 함수 내에서 전역 변수를 호출하지 않고, 매개변수로 데이터를 입력받고 데이터를 반환하는 형태로 함수를 구성
+
+        var scores = [];
+        var total = 0;
+        var avg = 0;
+
+        scores = inputScore();
+        total = totalScore(scores);
+        avg = avgScore(total, scores.length);
+        printScore(total, avg);
+
+        // 입력 부분
+        function inputScore() {
+            var jumsu = []; // 점수를 저장할 지역 변수인 배열 선언
+            for (var i = 0; i < 5; i++) {
+                var tmp = prompt("점수를 입력해 주세요");
+                tmp = Number(tmp);
+    
+                jumsu.push(tmp);
+            }
+
+            return jumsu;
+        }
+
+        // 총합 계산
+        function totalScore(scores) {
+            var total = 0; // 지역변수 total, 지역변수와 전역변수의 이름이 동일할 경우 지역변수가 우선순위를 가지고 있음
+            for (var i = 0; i < scores.length; i++) {
+                total = total + scores[i];
+            }
+
+            return total;
+        }
+
+        // 평균 계산
+        function avgScore(total, length) {
+            avg = total / length;
+
+            return avg;
+        }
+
+        // 화면 출력
+        function printScore(total, avg) {
+            console.log("입력한 점수의 총합은 " + total + "점이고, 평균은 " + avg + "점 입니다.");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

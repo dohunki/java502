@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정중앙에 위치하기</title>
+    <style>
+        .box {
+            border: 1px solid red;
+            width: 700px;
+            height: 700;
+            position: relative;
+        }
+
+        .sub {
+            width: 200px;
+            height: 200px;
+            background: royalblue
+        }
+
+        body {
+            position: relative;
+        }
+
+        div {
+            border: 1px solid black;
+            width: 200px;
+            height: 200px;
+            background: cadetblue;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <h3>transform 사용하기</h3>
+    <div class="box">
+        <div class="box sub"></div>
+    </div>
+</body>
+</html>

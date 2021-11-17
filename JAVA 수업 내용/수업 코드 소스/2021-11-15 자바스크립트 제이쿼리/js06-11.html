@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 6일차 11번</title>
+    <script src="./lib/jquery/jquery-3.6.0.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var xWidth = 100;
+            var yHeight = 100;
+
+            $("div").on("click", function() {
+                $(this).width(xWidth).addClass("box");
+                $(this).height(yHeight).addClass("box");
+                xWidth = xWidth - 10;
+                yHeight = yHeight - 10;
+            });
+        });
+    </script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            float: left;
+            margin: 5px;
+            background-color: yellow;
+        }
+
+        .box { background-color: red; }
+    </style>
+</head>
+<body>
+    <div>박스1</div>
+    <div>박스2</div>
+    <div>박스3</div>
+    <div>박스4</div>
+    <div>박스5</div>
+</body>
+</html>

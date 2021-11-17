@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전역변수와 지역변수 이해하기</title>
+</head>
+<body>
+    <script>
+         function getGrade2() {
+            kor2 =95; /* 지역변수, var kor2 =95 라고 선언하지 않고, kor2 =95 라고 
+            선언했기 때문에 지역변수가 아닌 전역 변수인 kor2에 데이터 95를 저장함 */
+        }
+        var kor2 =100; //전역변수 및 데이터 저장
+        getGrade2();
+        document.write("국어 점수 : " + kor2 +"<br>");
+        console.log("국어 점수 : " + kor2);
+
+        
+    </script>
+</body>
+</html>

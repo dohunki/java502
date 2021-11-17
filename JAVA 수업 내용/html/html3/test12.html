@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>형식을 가진 텍스트 입력</title>
+</head>
+<body>
+    <div>
+    <h3>회원 정보를 입력해주세요</h3>
+    <hr>
+        <form action="">
+            email : <input type="email" placeholder="id@host"><br>
+            홈페이지 : <input type="url" placeholder="https://"><br>
+            전화번호 : <input type="tel" placeholder="000-0000-0000">
+            <input type="submit" value="확인"><br><br>
+        <hr>
+            검색어 : <input type="search" placeholder="검색어">
+            <input type="button" value="검색">
+        </form>
+    </div>
+    <br><br><br>
+
+    <hr><hr>
+    <div>
+    <h3>fieldset 사용하기</fieldset></h3>
+    <hr>
+        <form action="">
+            <fieldset style="width: 30%;">
+                <legend>회원정보</legend>
+                <label for="">이메일 : 
+                    <input type="email" placeholder="이메일을 입력해 주세요"><br>
+                </label>
+                <label for="">홈페이지 : 
+                    <input type="url" placeholder="https//"><br>
+                <label for="">전화번호 : 
+                    <input type="email" placeholder="000-0000-0000">
+            </fieldset>
+            <small>질문 : mobile 010-1111-1111</small>
+        </form>
+    </div>
+    
+</body>
+</html>

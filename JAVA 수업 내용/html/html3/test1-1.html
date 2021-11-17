@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼에 데이터 입력하기</title>
+</head>
+<body>
+    <div>
+        <h3>자기 소개서 작성</h3>
+        <hr>
+        <form action="">
+            <label for="user_name">이름 : </label>
+            <input type="text" id="user_name" name="user_name" value=""
+            placeholder="이름을 입력하세요"><br>
+            <label for="user_pw">암호 : </label>
+            <input type="password" id="user_pw" name="user_pw" value=""
+            maxlength="4" placeholder="암호를 4자리로 입력하세오"><br>
+            <label for="user_doc">자소서 : </label>
+            <textarea name="user_doc" id="user_doc" cols="30" rows="10">이곳에 자기소개서 작성
+            </textarea>
+            
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>justify-content</title>
+    <style>
+        /* justify-content : 자식태그들을 가로 정렬할 때 사용 */
+        /* flex-start(기본, 왼쪽), center(중앙), flex-end(오른쪽), space-around(양쪽, 첫번째와 마지막 
+        자식태그의 여백을 모두 살려서 표현), space-between(양쪽, 첫번째와 마지막 자식태그의 양끝의 여백을 삭제함) */
+        #div04 .container {
+            margin: 10px;
+            display: flex;
+            background-color: dodgerblue;
+        }
+
+        #div04 .start { justify-content: flex-start; }
+        #div04 .center { justify-content: center; }
+        #div04 .end { justify-content: flex-end; }
+        #div04 .around { justify-content: space-around; }
+        #div04 .between { justify-content: space-between; }
+
+        #div04 .container > div {
+            background-color: lightgray;
+            width: 100px;
+            margin: 10px;
+            text-align: center;
+            font-size: 32px;
+        }
+    </style>
+</head>
+<body>
+    <h3>justify-content 사용하기</h3>
+    <div id="div04">
+        <div class="container start">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="container center">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="container end">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="container around">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="container between">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 7일차 1번</title>
+    <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        /*
+        width() : 지정한 태그의 너비를 설정하거나 가져옴
+            $(선택자).width();  // 정보 가져오기
+            $(선택자).width(설정값);  // 설정값 적용하기
+        height() : 지정한 태그의 높이를 설정하거나 가져옴
+            $(선택자).height();  // 정보 가져오기
+            $(선택자).height(설정값);  // 설정값 적용하기
+        innerWidth() : 지정한 태그의 padding을 포함한 너비를 가져옴
+        innerHeight() : 지정한 태그의 padding을 포함한 높이를 가져옴
+        outerWidth() : 지정한 태그의 border를 포함한 너비를 가져옴
+        outerHeight() : 지정한 태그의 border를 포함한 높이를 가져옴
+        outerWidth(true) : 지정한 태그의 margin을 포함한 너비를 가져옴
+        outerHeight(true) : 지정한 태그의 margin을 포함한 높이를 가져옴
+        */
+       $(document).ready(function() {
+           $("#btn-widthheight").on("click", function() {
+               var txt= "";  /* 문자열 변수 선언, 자바스크립트의 변수는 초기값이 undefined이기 때문에
+               빈문자열("")을 사용하여 txt라는 변수의 데이터 타입을 문자열 타입으로 변경해 줌 */
+               txt += "div의 너비는 : "+ $("#div01").width()+ "<br>"; // width()를 이용하여 너비를 가져옴
+               txt += "div의 높비는 : "+ $("#div01").height(); // height()를 이용하여 높이를 가져옴
+                $("#div01").html(txt);  // html()를 이용하여 div 태그에 html 내용을 입력함
+           })
+       })
+    </script>
+    <style>
+        #div01 {
+            width: 400px;
+            height: 200px;
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid black;
+            background-color: dodgerblue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="div01"></div>
+    <br><hr><br>
+    <button type="button" id="btn-widthheight">클릭 시 width, height 출력하기</button>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 7일차 4번</title>
+    <script src="./lib/jquery/jquery-3.6.0.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            // 태그 추가
+            // append() : 지정한 태그의 끝에 내용을 추가함
+            // prepend() : 지정한 태그의 시작 부분에 내용을 추가함
+            // after() : 지정한 태그 뒤에 내용을 추가함
+            // before() : 지정한 태그 앞에 내용을 추가함
+            var appendCount1 = 0;
+            var appendCount2 = 0;
+            var prependCount1 = 0;
+            var prependCount2 = 0
+    
+            $("#btn-appendText").on("click", function() {
+                $("#div01 > p").append(" <b>추가된 글자 " + appendCount1 + "</b>");
+                appendCount1++;
+            });
+    
+            $("#btn-appendLi").on("click", function() {
+                $("#div01 > ol").append("<li>추가된 리스트 " + appendCount2 + "</li>");
+                appendCount2++;
+            });
+
+            $("#btn-prependText").on("click", function() {
+                $("#div01 > p").prepend(" <b>추가된 글자 " + prependCount1 + "</b>");
+                prependCount1++;
+            });
+    
+            $("#btn-prependLi").on("click", function() {
+                $("#div01 > ol").prepend("<li>추가된 리스트 " + prependCount2 + "</li>");
+                prependCount2++;
+            });
+    
+            var afterCount = 0;
+            var beforeCount = 0;
+
+            $("#btn-after").on("click", function() {
+                $("#img1").after(" <b>after " + afterCount + "</b>");
+                afterCount++;
+            });
+
+            $("#btn-before").on("click", function() {
+                $("#img1").before("<b>before " + beforeCount + "</b> ");
+                beforeCount++;
+            });
+            // 태그 삭제
+            // empty() : 지정한 태그의 자식 태그를 삭제함
+            // remove() : 지정한 태그와 자식 태그를 모두 삭제함
+            $("#btn-remove").on("click", function() {
+                $("#div-sub").remove();
+            });
+
+            $("#btn-empty").on("click", function() {
+                $("#div-sub").empty();
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div id="div01">
+        <h3>append, prepend 사용하기</h3>
+        <button type="button" id="btn-appendText">append를 이용하여 글자 추가</button>
+        <button type="button" id="btn-appendLi">append를 이용하여 li 태그 추가</button>
+        <button type="button" id="btn-prependText">prepend를 이용하여 글자 추가</button>
+        <button type="button" id="btn-prependLi">prepend를 이용하여 li 태그 추가</button>
+        <hr>
+        <p>버튼 클릭 시 글자 추가</p>
+        <ol>
+            <li>리스트 1</li>
+        </ol>
+    </div>
+    <br><hr><br>
+    <div id="div02">
+        <h3>after, before 사용하기</h3>
+        <button type="button" id="btn-after">after 사용하기</button>
+        <button type="button" id="btn-before">before 사용하기</button>
+        <hr>
+        <img src="./pengsu01.png" alt="" id="img1">
+    </div>
+    <br><hr><br>
+    <div id="div03">
+        <h3>remove, empty 사용하기</h3>
+        <button type="button" id="btn-remove">remove 사용</button>
+        <button type="button" id="btn-empty">empty 사용</button>
+        <hr>
+        <div id="div-sub" style="border: 1px solid black; width: 300px; height: 150px; background-color: lightskyblue;">
+            <h3>버튼 클릭 시 삭제 될 h3 태그</h3>
+            <p>버튼 클릭 시 삭제 될 p 태그</p>
+            <div>
+                <p>버튼 클릭 시 삭제 될 자손 태그</p>
+            </div>
+        </div>
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

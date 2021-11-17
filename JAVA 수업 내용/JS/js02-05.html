@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학점 환산 프로그램 만들기</title>
+    <script>
+         /*
+        다중 else if 문
+        조건문이 여러개인 else if 문
+        사용법
+            if (조건식1) {
+                조건식1 이 true 일 경우 실행될 코드 ...
+            }
+            else if (조건식2) {
+                조건식2 가 true 일 경우 실행될 코드 ...
+            }
+            else if (조건식3) {
+                조건식3 가 true 일 경우 실행될 코드 ...
+            }
+            else {
+                모든 조건식이 false 일 경우 실행될 코드 ...
+                else 부분은 반드시 입력할 필요는 없음
+            }
+            
+        */
+        var point= 93;
+        var grade= "";
+        
+        // else if 하는 점수는 순차적으로 해야 한다. 순서가 바뀌면 안된다.
+
+        point= prompt("성적을 입력해 주세요(숫자로 입력)");
+
+        if (point > 100) {
+            alert("점수는 0~100점 사이 값을 입력해야 합니다."+ "</p>");
+        }
+        else if (point>= 90) {
+            grade= "A";
+            // document.write("아주 잘했어요."+ "</p>");
+            alert("아주 잘했어요.")
+        }
+        else if (point>= 80) {
+            grade= "B";
+            // document.write("잘했어요."+ "</p>");
+            alert("잘했어요.")
+
+        }
+        else if (point>= 70) {
+            grade= "C";
+            // document.write("조금만 노력하면 잘할 수 있어요."+ "</p>");
+            alert("조금만 노력하면 잘할 수 있어요.")
+
+        }
+        else if (point>= 60) {
+            grade= "D";
+            // document.write("좀 더 노력하세요."+ "</p>");
+            alert("좀 더 노력하세요.")
+
+        }
+        else {
+            grade= "F";
+            // document.write("많이 노력하시기 바랍니다."+ "</p>");
+            alert("많이 노력하시기 바랍니다.")
+
+        }
+        // document.write("학생의 학점은 <b>"+ grade+ "</b>입니다.</p>")
+        alert("학생의 점수는 " + point+"점 이고, 학점은 " +grade + "입니다.")
+
+       
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

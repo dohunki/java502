@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시맨틱 태그</title>
+    <style>
+        /* css에서 id를 구분하는 기호는 #, class를 구분하는 기호는 . */
+        html, body {
+            /* margin : html tag 테두리 밖의 영역 */
+            margin: 0; 
+            /* padding : html tag 테두리 영역과 컨텐츠 영역 사이의 공간 */
+            padding: 0;
+            /* % : css에서 사용하는 단위 중 하나 */
+            height: 100%;
+        }
+
+        .header {
+            width: 100%;
+            height: 15%;
+            /* background : 배경 속성 지정 */
+            background: yellow;
+        }
+
+        .nav {
+            width: 15%;
+            height: 70%;
+            float: left;
+            background: olive;
+        }
+
+        .section {
+            width: 70%;
+            height: 70%;
+            /* float : 원래 생성된 목적은 이미지와 텍스트를 한 라인에 표시하기 위해서 만들어진 속성,
+            위에 떠있다는 의미를 가진 속성, 속성값은 left, right, div와 같은 block 타입의 태그를 
+            한 라인에 여러개 배치할 수 있도록 함 */
+            /* float를 사용 시 순서대로 해당 방향으로 붙음 */
+            float: left;
+            background: olivedrab;
+        }
+
+        .aside {
+            width: 15%;
+            height: 70%;
+            float: right;
+            background: orange;
+        }
+
+        #footer {
+            width: 100%;
+            height: 15%;
+            /* clear : float 속성 사용 후 float 효과를 제거하는 속성 */
+            clear: both;
+            background: plum;
+        }
+
+        #div01 {
+            width: 100%;
+            height: 400px;
+        }
+
+        #div02 {
+            margin: 20px;
+        }
+
+        .box {
+            border: 3px solid lightgreen;
+            padding: 10px;
+        }
+
+        .img1, .img2 {
+            float: right;
+        }
+
+        /* after : 해당 컨텐츠가 그려진 이후에 동작 */
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
+    <script>
+        alert("경고합니다.");
+    </script>
+</head>
+<body>
+    <div id="div01">
+        <header class="header">Header</header>
+        <nav class="nav">Nav</nav>
+        <aside class="aside">Aside</aside>
+        <section class="section">Section</section>
+        <footer id="footer">Footer</footer>
+    </div>
+    <br><hr><br>
+    <div id="div02">
+        <div>
+            <img src="pengsu01.jpg" alt="">
+            <p>국회는 의장 1인과 부의장 2인을 선출한다. 지방자치단체는 주민의 복리에 관한 사무를 처리하고 재산을 관리하며, 
+                법령의 범위안에서 자치에 관한 규정을 제정할 수 있다.</p>
+        </div>
+        <div>
+            <img src="pengsu01.jpg" alt="" style="float: left;">
+            <p>국회는 의장 1인과 부의장 2인을 선출한다. 지방자치단체는 주민의 복리에 관한 사무를 처리하고 재산을 관리하며, 
+                법령의 범위안에서 자치에 관한 규정을 제정할 수 있다.</p>
+        </div>
+        <p>누구든지 체포 또는 구속을 당한 때에는 즉시 변호인의 조력을 받을 권리를 가진다. 
+            다만, 형사피고인이 스스로 변호인을 구할 수 없을 때에는 법률이 정하는 바에 의하여 국가가 변호인을 붙인다.</p>
+            <br><hr><br>
+        <div>
+            <img src="pengsu01.jpg" alt="" style="float: left;">
+            <p>국회는 의장 1인과 부의장 2인을 선출한다. 지방자치단체는 주민의 복리에 관한 사무를 처리하고 재산을 관리하며, 
+                 법령의 범위안에서 자치에 관한 규정을 제정할 수 있다.</p>
+        </div>
+        <br><br><br><br>
+        <p>누구든지 체포 또는 구속을 당한 때에는 즉시 변호인의 조력을 받을 권리를 가진다.
+            다만, 형사피고인이 스스로 변호인을 구할 수 없을 때에는 법률이 정하는 바에 의하여 국가가 변호인을 붙인다.</p>
+
+        <h3>clear fix를 사용하지 않았을 경우</h3>
+        <div class="box">
+            <img class="img1" src="pengsu02.jpg" alt="" width="200" height="200">
+            누구든지 체포 또는 구속을 당한 때에는 즉시 변호인의 조력을 받을 권리를 가진다. 
+            다만, 형사피고인이 스스로 변호인을 구할 수 없을 때에는 법률이 정하는 바에 의하여 국가가 변호인을 붙인다.
+        </div>
+
+        <br><hr style="clear: both;"><br>
+
+        <h3>clear fix를 사용했을 경우</h3>
+        <!-- clearfix 라는 방식을 사용하는 방법은 일종의 공식임 -->
+        <!-- float 속성을 사용할 태그를 div로 감싸고 div 태그에 after 속성을 사용하여 content:"";
+             clear:both; display: table; 를 사용함 -->
+        <div class="box clearfix">
+            <img class="img2" src="pengsu02.jpg" alt="" width="200" height="200">
+            누구든지 체포 또는 구속을 당한 때에는 즉시 변호인의 조력을 받을 권리를 가진다. 
+            다만, 형사피고인이 스스로 변호인을 구할 수 없을 때에는 법률이 정하는 바에 의하여 국가가 변호인을 붙인다.
+        </div>
+
+
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

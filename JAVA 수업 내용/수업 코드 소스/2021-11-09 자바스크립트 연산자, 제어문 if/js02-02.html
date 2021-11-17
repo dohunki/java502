@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 2일차 2번파일</title>
+    <script>
+        // 제어문
+        // 프로그램의 실행 과정을 제어하기 위해서 사용하는 구문, 반복 처리, 선택 처리를 위해서 사용함
+        // 조건문
+            // 지정한 조건에 의해서 실행할 구문을 변경하여 실행하는 구문
+            // if문, if ~ else문, if ~ if else ~ else문, switch ~ case문
+        // 반복문
+            // 지정한 조건에 의해서 지정된 구문을 반복 실행하는 구문
+            // for문, while문, do ~ while문, for ~ in문
+
+        // if문
+        // 가장 기본적인 조건문
+        // 지정한 조건이 true일 경우 추가로 지정된 내용을 실행하는 조건문
+        // 사용법
+        // if (조건) {
+        //      조건이 true일 경우 실행할 코드 ...
+        // }
+
+        var age = 20;
+        if (age >= 19) {
+             console.log("성인입니다.");
+        }
+        console.log("사람입니다.");
+
+        var money = 7000;
+        var jajang = 6000;
+        var mandu = 2000;
+        console.log("점심 시간입니다.");
+        console.log("중국집에서 자장면을 주문합니다.");
+        if (money >= (jajang + mandu)) {
+            console.log("군만두를 추가합니다.");
+        }
+        console.log("중국집에서 자장면을 먹습니다.");
+        console.log("점심을 맛있게 잘 먹었습니다.");
+
+        console.log("\n ----------------------\n");
+        // if ~ else문
+        // if문에 else 부분이 추가된 if문
+        // 지정한 조건이 true일 경우 실행하는 부분과 조건이 false일 경우 실행하는 부분이 따로 있는 조건문
+        // true와 false 두 가지 중 무조건 하나를 선택해서 실행하는 방식
+        // 사용법
+        // if (조건식) {
+        //     조건식의 결과가 true일 경우 실행할 코드
+        // }
+        // else {
+        //     조건식의 결과가 false일 경우 실행할 코드
+        // }
+        
+        console.log("점심 시간입니다.\n중국집에서 식사를 합니다.");
+        var menu = "짬뽕";
+        
+        if (menu == "자장면") {
+            console.log("자장면을 주문합니다.");
+        }
+        else {
+            console.log("짬뽕을 주문합니다.");
+        }
+        console.log("주문한 음식을 맛있게 먹습니다.");
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

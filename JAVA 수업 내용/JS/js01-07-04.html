@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전역변수와 지역변수 이해하기4</title>
+</head>
+<body>
+    <script>
+        function getGrade4() {
+            var kor4 =95; //지역변수 선언 및 데이터 저장
+            return kor4; //return 키워드 뒤에 데이터를 입력하면, 입력된 데이터를 외부로 되돌려 줌
+        }
+
+        var getKor = getGrade4(); // 함수 getGrade4() 를 실행하고 되돌려 받은 데이터를 전역변수 getKor에 저장함
+        document.write("국어 점수 : " + getKor +"<br>");
+        console.log("국어 점수 : " + getKor);
+
+    </script>
+</body>
+</html>

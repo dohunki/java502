@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 6일차 1번</title>
+
+    <!-- 
+    jQuery 사용하기
+    jquery는 자바스크립트를 쉽게 사용할 수 있도록 도와주는 라이브러리
+    
+    jQuery를 사용하는 2가지 방식
+    1. jquery 파일을 자신의 서버에 다운로드 받아 사용하기 -->
+    <!-- <script src= "./lib/jquery/jquery-3.6.0.js"></script> -->
+    <!--
+    2. cdn을 통해서 외부 서버에 있는 jquery 파일을 로드하기 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        /*
+        -제이쿼리는 자바스크립트 문법으로 만들어져 있어 자바스크립트와 혼합하여 사용하는 것이 
+         가능함
+        -제이쿼리와 자바스크립트의 문법이 동일하기 때문에 제이쿼리를 사용하는 부분에 대해서
+         특정 기호를 사용하여 제이쿼리를 동작시킨다는 것을 알려줘야 함
+        사용법
+            jQuery("선택자").메서드();
+            $("선택자").메서드();      //  주로 $를 사용하는 방식을 사용함
+        
+        제이쿼리에서 말하는 선택자는 CSS의 선택자와 동일함
+        CSS에서 사용하는 선택자를 그래로 사용함(p.436 표12-2 참고)
+        주로 class 선택자, id 선택자를 많이 사용함
+
+        주의점
+            -자바스크립트를 사용하여 이벤트를 발생시켜 사용할 경우 현재 문서 내의 html 태그가 
+             모두 로딩된 다음에 이벤트를 실행하여야 정상적으로 작동한다.
+            -이벤트 발생시 html 태그가 로딩이 되지 않았을 경우 해당 html 태그를 자바스크립트가 
+             찾지 못하여 오류가 발생항
+            -이러한 문제를 없애기 위해서 html 태그가 모두 로딩된 다음인 body 태그 가장 아래에
+             script 태그를 사용하여 자바스크립트 이벤트를 사용하거나, 제이쿼리의 ready 이벤트 사용
+             및 DOM 객체를 사용하여 모든 html이 로딩된 후 동작하는 이벤트를 발생시킨 후 자바스크립트
+             이벤트가 동작하도록 소스코드를 작성해야 함
+                -html, css, js는 실행 시 해당 문서에서 위에서 아래로 내려가면서 한줄 씩 실행함
+                -js가 실행되는 시점에 html 태그가 로딩이 되어 있지 않을 경우 js는 해당 html 태그를
+                찾을 수 없기 때문에 오류가 발생함
+                -해당 문제 해결 방식
+                    1. js를 body 태그 가장 아래에 입력
+                    2. js를 이용하여 dom 객체의 loaded 이벤트를 사용하여 html 태그가 모두 로딩된 후
+                        js가 동작되도록 설정
+                        2.1 loaded 이벤트를 사용하여 html 태그 로딩 후 js 실행(비추천)
+                            html 태그 및 모든 리소스가 로딩된 후 js가 동작됨
+                            예전 방식, 구형 웹 브라우저에서도 동작됨
+                        2.2 addEventListener를 이용하여 html 태그 로딩 후 js 실행(추천)
+                            html 태그만 모두 로딩 후 js가 동작됨
+                            최신 방식, 최신 웹 브라우저에서만 동작됨(internetexploer 9버전부터 
+                            사용 가능)
+                    3. jquery의 ready 이벤트를 사용하여 html 태그가 모두 로딩된 후 js가 동작되도록 
+                        설정
+        */
+
+    </script>
+
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            margin: 10px;
+            padding: 25px;
+        }
+
+        .red {background-color: red;}
+        .blue {background-color: blue;}
+        .green {background-color: green;}
+
+        p {background-color: lightgray;}
+    </style>
+
+    <script>
+        $("#btn-notload").on("click", function() {
+            alert("자바스크립트 사용 후 html 태그 로딩");
+        } );  // 실행 위치에 따라 결과가 달라진다.
+    </script>
+</head>
+<body>
+    <button type="button" id="btn">클릭 시 alert 창 열기</button>
+
+    <br><hr><br>
+    <button type="button" id="btn-notload">자바스크립트 사용 후 html 태그 로딩</button>
+    <button type="button" id="btn-loaded">자바스크립트 사용 전 html 태그 로딩</button>
+    <br><hr><br>
+
+    <div>
+        <div class= "box red">
+            <p>클릭 시 alert창 열기</p>
+        </div>
+        <div class= "box blue">
+            <div id= "div-click" style= "background-color: orange;">클릭 시 alert창 열기</div>
+        </div>
+        <div class= "box green">
+            <p>클릭 이벤트</p>
+        </div>
+    </div>
+
+    <script>
+        $("#btn").on("click", function() {
+            alert("jQuery를 이용한 클릭이벤트 발생");
+        });
+
+        $("p").on("click", function() {
+            alert("태그 선택자를 이용한 이벤트 발생");
+        });
+
+        $(".box").on("click", function() {
+            alert("클래스 선택자를 이용한 이벤트 발생");
+        });
+
+        $("#div-click").on("contextmenu", function() {
+            alert("아이디 선택자를 이용한 이벤트 발생");
+        });
+
+        // $("#btn-notload").on("click", function() {
+        //     alert("자바스크립트 사용 후 html 태그 로딩")
+        // });  // 실행 위치에 따라 결과가 달라진다.
+
+        $("#btn-loaded").on("click", function() {
+            alert("자바스크립트 사용 전 html 태그 로딩")
+        });
+    </script>
+</body>
+</html>

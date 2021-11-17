@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 4일차</title>
+    <style>
+         /* flex 순서: flex-grow, flex-shrink, flex-basis 의 기능을 한번에 사용하는 속성 */
+
+            /* flex-grow : 플렉스 항목의 크기를 너비를 조절하는 속성, 기본값은 0, 값은 숫자로 입력 */
+            /* 다른 플렉스 항목이 1일 때 나머지 항목의 값이 2이면, 1인 항목보다 2배 큰 크기를 가짐 */
+
+        #div03 .container {
+            display: flex;
+            background-color: lightgray;
+            align-items: stretch;
+        }
+
+        #div03 .container > div {
+            background-color: dodgerblue;
+            color: white;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            text-align: center;
+            font-size: 32px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h3>flex-grow 사용하기</h3>
+    <div id="div03">
+        <div class="container">
+            <div style="flex-grow: 1;">1</div>
+            <div style="flex-grow: 1;">2</div>
+            <div style="flex-grow: 3;">3</div>
+    </div>
+        <br><hr><br>
+        <h3>flex-shrink 사용하기</h3>
+    <div id="div04">
+        <div class="container">
+            <div>1</div>
+            <div>2</div>
+            <div style="flex-shrink: 0;">3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+        </div>
+    </div>
+</body>
+</html>

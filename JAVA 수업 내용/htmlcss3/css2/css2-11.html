@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display 프로퍼티</title>
+    <style>
+        div {
+            border: 2px solid yellowgreen;
+            color: blue;
+            background: aliceblue;
+        }
+        span {
+            border: 3px dotted red;
+            background: yellow;
+        }
+        #div01 {
+            border: 2px dashed black;
+            width: 200px; 
+            height: 100px;
+            margin-left: 30px;
+            margin-right: 30px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            padding: 20px;
+        }
+        #div02 {
+            border: 2px dashed black;
+            width: 200px; 
+            height: 100px;
+            margin-left: 30px;
+            margin-right: 30px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h3>인라인, 인라인 블록, 블록</h3>
+    <hr>
+    나는 <div style="display: none;">div(none)</div>입니다.<br><br>
+    나는 <div style="visibility: hidden; display: inline;">visibility(hidden)</div>입니다.<br><br>
+    나는 <div style="opacity: 0.0; display: inline;">opacity(0.0)</div>입니다.<br><br>
+    나는 <div style="opacity: 0.0;">opacity(0.0)</div>입니다.<br><br>
+    나는 <div style="display: inline;">div(inline)</div>입니다.<br><br>
+    나는 <div style="display: inline;"><span style="color:rgba(0, 0, 0, 0.0);"></span></div>입니다.<br><br>
+    나는 <div style="display: inline-block;">div(inline-block)</div>입니다.<br><br>
+    나는 <div>div<span style="display: block;">span(black)</span>입니다.
+        </div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 7일차 1번</title>
+    <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+       $(document).ready(function() {
+           $("#btn-widthHeight").on("click", function() {
+                var txt= ""; 
+                txt += "div의 너비는 : "+ $("#div01").width()+ "<br>"; 
+                txt += "div의 높이는 : "+ $("#div01").height(); 
+                $("#div01").html(txt);
+           });
+
+           $("#btn-inner").on("click", function() {
+                var txt= "";  
+                txt += "div의 너비는 : "+ $("#div01").width()+ "<br>"; 
+                txt += "div의 높이는 : "+ $("#div01").height()+ "<br>";
+                txt += "div의 padding까지의 너비는 : "+ $("#div01").innerWidth()+ "<br>";
+                txt += "div의 padding까지의 높이는 : "+ $("#div01").innerHeight();
+                $("#div01").html(txt);  
+           });
+
+           $("#btn-outer").on("click", function() {
+                var txt= "";  
+                txt += "div의 너비는 : "+ $("#div01").width()+ "<br>"; 
+                txt += "div의 높이는 : "+ $("#div01").height()+ "<br>";
+                txt += "div의 padding까지의 너비는 : "+ $("#div01").innerWidth()+ "<br>";
+                txt += "div의 padding까지의 높이는 : "+ $("#div01").innerHeight()+ "<br>";
+                txt += "div의 border까지의 너비는 : "+ $("#div01").outerWidth()+"<br>";
+                txt += "div의 border까지의 높이는 : "+ $("#div01").outerHeight();
+                $("#div01").html(txt);  
+           });
+
+           $("#btn-outerTrue").on("click", function() {
+                var txt= "";  
+                txt += "div의 너비는 : "+ $("#div01").width()+ "<br>"; 
+                txt += "div의 높이는 : "+ $("#div01").height()+ "<br>";
+                txt += "div의 padding까지의 너비는 : "+ $("#div01").innerWidth()+ "<br>";
+                txt += "div의 padding까지의 높이는 : "+ $("#div01").innerHeight()+ "<br>";
+                txt += "div의 border까지의 너비는 : "+ $("#div01").outerWidth()+ "<br>";
+                txt += "div의 border까지의 높이는 : "+ $("#div01").outerHeight()+ "<br>"; 
+                txt += "div의 margin까지의 너비는 : "+ $("#div01").outerWidth(true)+ "<br>";
+                txt += "div의 margin까지의 높이는 : "+ $("#div01").outerHeight(true);
+                $("#div01").html(txt);  
+           });
+
+           $("#btn-addWidth").on("click", function() {
+               var width= $("#div01").width(); // 현재 div의 widht를 가져옴
+               $("#div01").width(width+ 10);  // 가져온 width에 10을 더해서 width를 설정함
+               $("#btn-widthHeight").trigger("click"); // btn-widthHeight 태그의 클릭 이벤트 강제 실행
+           });
+
+           $("#btn-addHeight").on("click", function() {
+               var height= $("#div01").height();
+               $("#div01").height(height+ 10);
+               $("#btn-widthHeight").trigger("click");
+           });
+       });
+    </script>
+    <style>
+        #div01 {
+            width: 400px;
+            height: 200px;
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid black;
+            background-color: dodgerblue;
+            color: white;
+        };
+    </style>
+</head>
+<body>
+    <div id="div01"></div>
+    <br><hr><br>
+    <button type="button" id="btn-widthHeight">클릭 시 width, height 출력하기</button>
+    <button type="button" id="btn-inner">클릭 시 innerWidth, innerHeight 출력하기</button>
+    <button type="button" id="btn-outer">클릭 시 outerWidth, outerHeight 출력하기</button>
+    <button type="button" id="btn-outerTrue">클릭 시 outerWidth(true), outerHeight(true) 출력하기</button>
+    <button type="button" id="btn-addWidth">클릭 시 width 10 추가</button>
+    <button type="button" id="btn-addHeight">클릭 시 height 10 추가</button>
+</body>
+</html>

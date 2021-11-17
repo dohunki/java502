@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 5일차 2번</title>
+    <script>
+    
+        function inputscore() {
+            for (var i=0; i < 5; i++) {
+                var tmp= prompt("점수를 입력해주세요");
+                tmp= Number(tmp);
+                scores.push(tmp);
+            }
+        }
+
+        // 점수 총합 계산부
+        function totalScore() {
+            for (var i=0; i < scores.length; i++) {
+            total= total +scores[i];
+            }
+        }
+        
+        // 점수 평균 계산부
+        function avgScore () {
+            avg= total/scores.length;
+        }
+
+        // 총합 및 평균 점수 출력부
+        function printScore() {
+            // console.log("점수의 총합은 "+total +"점이고, \n 점수의 평균은"+ avg+ "입니다.");
+            document.write("점수의 총합은 "+total +"점이고, \n 점수의 평균은"+ avg+ "입니다.");
+        }
+        
+        var scores= [];
+        var total= 0;
+        var avg= 0;
+
+        inputScore();
+        totalScore();
+        avgScore();
+        printScore();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

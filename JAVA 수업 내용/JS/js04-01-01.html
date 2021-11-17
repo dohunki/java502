@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 4일차 1번</title>
+    <script>
+        /*
+        배열의 메서드
+        배열을 사용할 때 도움을 주는 명령어 
+        toString() : 배열의 요소를 문자열로 출력함, 각각의 요소는 쉼표(,)로 구분함
+        join() : toString()과 동일한 효과를 가지고 있는 명령어, 지정한 문자로 각각의 요소를 구분함
+        */
+        var city= ["서울", "대전", "대구", "부산"];
+        
+        var s_toString= city.toString();
+        var s_join= city.join("*");
+        // var s_join= city.join("&");
+
+        console.log("배열 city의 내용을 원본 그래로 출력");
+        console.log(city);
+        console.log("배열 city의 내용을 toString()으로 출력");
+        console.log(s_toString);
+        console.log("배열 city의 내용을 join()으로 출력");
+        console.log(s_join);
+
+        // toString(), join()을 사용하지 않고 직접 출력하기
+        var strTmp= "";
+        for (var i= 0; i < city.length; i++) {
+            if ( i== (city.length-1)) {
+                strTmp= strTmp+ city[i];
+            }
+            else {
+                strTmp= strTmp+ city[i]+ "@";
+            }
+        }
+        
+        console.log(strTmp);
+
+        console.log("\n----------------------------------\n");
+
+        /* 
+        split() : 문자열을 지정한 문자를 기준으로 구분하여 배열로 출력하는 명령어
+        사용법
+            var 저장할배열명 = 문자열.split("구분할문자열")
+        */
+        var city= ["서울", "대전", "대구", "부산"];
+
+        console.log("원본 문자열 : " + s_join);
+        console.log("split() 으로 문자열을 구분 : "+ city.toString() ); 
+        var arr_split= s_join.split("*");
+        console.log(arr_split);
+
+        console.log("\n----------------------------------\n");
+
+        /*
+        push(), pop()
+        push() : 지정된 배열의 가장 마지막 부분에 데이터를 추가함
+        pop() : 지정된 배열의 가장 마지막 부분에 있는 데이터 삭제
+        사용법
+            배열명.push(마지막에 추가할 데이터);
+            배열명.pop();  
+        */
+        var city= ["서울", "대전", "대구", "부산"];
+        console.log("원본 배열 요소 : "+ city.toString());
+        city.push("철원");
+        city.push("횡성");
+        console.log("push를 사용하여 데이터 추가 후 city 요소 : "+ city.toString());
+        city.pop();
+        city.pop();
+        city.pop();
+        console.log("pop을 사용하여 데이터 삭제 후 city 요소 : "+ city.toString());
+
+        console.log("\n----------------------------------\n");
+
+        /*
+        unshift(), shift()
+        unshift() : 지정한 배열의 가장 앞쪽에 데이터를 추가
+        shift() : 지정한 배열의 가장 앞쪽에 있는 데이터를 삭제, 삭제한 데이터를 반환(출력)
+        사용법
+            배열명.unshift(가장 앞에 추가할 데이터);
+            var 변수명= 배열명.unshift(가장 앞에 추가할 데이터); //추가된 데이터를 포함한 배열의 길이를 반환
+            배열명.shift();
+            var 변수명= 배열명.shift();  //배열에서 삭제한 데이터를 변수에 저장
+        */
+        var city= ["서울", "대전", "대구", "부산"];
+        console.log("원본 배열 요소 : "+ city.toString());
+        var cityLength= city.unshift("인천");
+        cityLength= city.unshift("판교");
+        console.log("unshift() 사용 후 배열 city의 요소 : "+ city.toString()+ "\t배열의 길이 : "+ cityLength);
+        var cityName= city.shift();
+        console.log("shift() 사용으로 삭제된 배열 city의 요소 : "+ cityName);
+        cityName= city.shift()
+        console.log("shift() 사용으로 삭제된 배열 city의 요소 : "+ cityName);
+        console.log("shift() 사용 후 배열 city의 요소 : "+ city.toString());
+
+        console.log("\n----------------------------------\n");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

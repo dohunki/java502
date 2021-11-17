@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 7일차 3번</title>
+    <script src="./lib/jquery/jquery-3.6.0.js"></script>
+
+    <script>
+        /*
+        val() : 지정한 태그의 value 값을 가져오거나 설정하는 명령, input 태그만 value를 가지고 있음
+            $(선택자).val();  // 속성값 가져오기
+            $(선택자).val(속성값) // 속성값 설정하기
+        text() : 지정한 태그의 문자를 가져오거나 설정하는 명령, html 태그의 시작태그와 끝태그 사이의 문자,
+                해당 문자에 html 태그가 있을 경우 무시
+            $(선택자).text();  // 속성값 가져오기
+            $(선택자).text(속성값) // 속성값 설정하기
+        html() : 지정한 태그의 문자을 가져오거나 설정하는 명령, html 태그의 시작태그와 끝태그 사이의 문자,
+                해당 문자에 html 태그가 있을 경우 html 태그를 표시
+            $(선택자).html();  // 속성값 가져오기
+            $(선택자).html(속성값) // 속성값 설정하기
+        attr() : 지정한 태그의 지정한 속성값을 가져오거나 설정하는 명령
+            $(선택자).attr("속성명");  // 지정한 속성값 가져오기
+            $(선택자).attr("속성명", "속성값") // 지정한 속성값 설정하기
+        */
+        $(document).ready(function() {
+            $("#btn-attrGet").on("click", function() {
+                var textLink= $("#link").attr("href");
+                var textLinkName= $("#link").text();
+                alert("attr()을 사용하여 가져온 데이터 : "+ "\n링크 주소 : "+ textLink+ "\n링크 이름 : "+ textLinkName);
+            });
+
+            $("#btn-attrSet").on("click", function() {
+                $("#link").attr("href", "http://www.naver.com");
+                $("#link").text("네이버 홈페이지");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="div04">
+        <h3>attr() 사용하기</h3>
+        <button type="button" id="btn-attrGet">attr()를 사용하여 지정한 속성값 가져오기</button>
+        <button type="button" id="btn-attrSet">attr()를 사용하여 지정한 속성값 설정하기</button>
+        <hr>
+        <a href="http://www.daum.net" target="_blank" id="link">다음 홈페이지</a>
+    </div>
+    <br><hr><br>
+</body>

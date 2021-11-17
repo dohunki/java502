@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전역변수와 지역변수 이해하기3</title>
+</head>
+<body>
+    <script>
+        function getGrade3() {
+            var kor3 =95; //지역변수 선언 및 테이터 저장
+        }
+
+        getGrade3();
+        document.write("지역변수 값은 함수 외부에서 사용할 수 없습니다."); //오류발생 (kor3 not defined)
+        document.write("국어 점수 : " + kor3); // 함수의 지역변수는 외부에서 직접 접근할 수 없음
+
+        console.log("지역변수 값은 함수 외부에서 사용할 수 없습니다."); //오류발생 (kor3 not defined)
+        console.log("국어 점수 : " + kor3); // 함수의 지역변수는 외부에서 직접 접근할 수 없음
+
+
+    </script>
+</body>
+</html>

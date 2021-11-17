@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 6일차 3번</title>
+    <!-- <script src="./lib/jquery/jquery-3.6.0.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        // 제이쿼리 이벤트
+        // 자바스크립트의 이벤트를 쉽게 사용할 수 있도록 재정의한 이벤트들이 존재함
+        // 브라우저 이벤트
+            // resize() : 브라우저 창의 크기가 변경될 경우 발생
+            // scroll() : 마우스 스크롤이 움직였을 경우 발생
+        // 웹페이지 로딩 이벤트
+            // ready() : 해당 태그가 화면에 로딩될 경우 이벤트 발생
+        // 폼 이벤트
+            // submit() : input 태그의 type=submit 버튼을 클릭한 것과 동일한 효과의 이벤트
+            // focus() : input 태그를 사용하기 위해서 마우스로 클릭하여 포커스를 주는 효과의 이벤트
+            // change() : input 태그를 사용자가 조작하여 내용이 변경되었을 경우 동작하는 이벤트
+            // select() : input 태그의 내용을 선택하였을 경우 동작하는 이벤트
+            // blur() : 현재 focus가 주어져있던 input 태그에서 포커스를 잃었을 경우 동작하는 이벤트
+        // 키보드 이벤트
+            // keydown() : 키보드의 키가 눌러질경우 동작하는 이벤트
+            // keyup() : 키보드의 키가 눌러졌다가 다시 올라갈때 동작하는 이벤트
+            // keypress() : 키보드의 키를 누르고 있을 경우 동작하는 이벤트
+        // 마우스 이벤트
+            // click() : 마우스 왼쪽 버튼 클릭 시 동작하는 이벤트
+            // dblclick() : 마우스 왼쪽 버튼으로 더블 클릭 시 동작하는 이벤트
+            // contextmenu() : 마우스 오른쪽 버튼으로 클릭 시 동작하는 이벤트
+            // mousedown() : 마우스 왼쪽 버튼을 눌렀을때 동작하는 이벤트
+            // mouseup() : 마우스 왼쪽 버튼을 눌렀다가 땠을 때 동작하는 이벤트
+            // mouseenter() : 지정한 태그 위에 마우스 포인트가 올라갔을 경우 동작하는 이벤트
+            // mouseleave() : 지정한 태그 위에서 마우스 포인트가 사라졌을 경우 동작하는 이벤트
+            // mousemove() : 마우스 포인트가 이동 시 동작하는 이벤트
+
+        $(document).ready(function() {
+            $(window).resize(function() {
+                // alert("웹 브라우저의 창 크기가 변경되었습니다.");
+                console.log("웹 브라우저의 창 크기가 변경되었습니다.");
+            });
+            // scroll() 메서드를 사용하여 스크롤 이벤트 사용하기
+            // $("#target").scroll(function() {
+            //     console.log("스크롤 위치를 변경했습니다.");
+            // });
+            // on 메서드를 사용하여 스크롤 이벤트 사용하기
+            $("#target").on("scroll", function() {
+                console.log("스크롤 위치를 변경했습니다.");
+            });
+
+            $("#text-box1").on("focus", function() {
+                console.log("text-box1에 포커스가 주어짐");
+            });
+
+            $("#text-box1").on("blur", function() {
+                console.log("text-box1에 포커스가 사라짐");
+            });
+
+            $("#text-box1").on("change", function() {
+                var text = $(this).val();
+                console.log("text-box1의 내용 : " + text);
+            });
+
+            $("#text-box2").on("focus", function() {
+                console.log("text-box2에 포커스가 주어짐");
+            });
+
+            $("#text-box2").on("blur", function() {
+                console.log("text-box2에 포커스가 사라짐");
+            });
+
+            $("#text-box2").on("change", function() {
+                var text = $(this).val();
+                console.log("text-box2의 내용 : " + text);
+            });
+
+            $("#text-box3").on("select", function() {
+                alert("글 선택 시 이벤트 동작");
+            });
+
+            $("#btn-click").on("click", function() {
+                $("#text-box3").select();
+            });
+
+            $("#key-down").on("keydown", function() {
+                console.log("키보드 키를 눌렀습니다.");
+            });
+            $("#key-up").on("keyup", function() {
+                console.log("키보드 키를 눌렀다가 땠습니다.");
+            });
+            $("#key-press").on("keypress", function() {
+                console.log("키보드 키를 누르고 있습니다.");
+            });
+
+            $("#box1").on("click", function() {
+                alert("클릭 시 이벤트 발생");
+            });
+            $("#box1").on("contextmenu", function(){
+                alert("오른쪽 버튼 클릭 시 이벤트 발생");
+            });
+            $("#box1").on("mouseleave", function(){
+                alert("box1에서 마우스 포인트가 나갔을 경우 이벤트 발생");
+            });
+            $("#box2").on("dblclick", function() {
+                alert("더블 클릭 시 이벤트 발생");
+            });
+            $("#box2").on("mouseenter", function() {
+                alert("box2에 마우스 포인트가 올라갔을 경우 이벤트 발생");
+            });
+            $("#box3").on("mousedown", function() {
+                alert("마우스 왼쪽 버튼을 눌렀을 경우 이벤트 발생");
+            });
+            $("#box3").on("mouseup", function() {
+                alert("마우스 왼쪽 버튼을 눌렀다가 땠을 경우 이벤트 발생");
+            });
+            $("#box3").on("mousemove", function() {
+                alert("마우스 포인트가 이동할 경우 이벤트 발생");
+            });
+        });
+
+    </script>
+
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            background-color: orange;
+            padding: 20px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="target" style="overflow: scroll; width: 200px; height: 100px;">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+        ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit
+        esse cillum dolore eu fugiat nulla pariatur. Excepteur
+        sint occaecat cupidatat non proident, sunt in culpa qui
+        officia deserunt mollit anim id est laborum.
+    </div>
+    <div id="other">
+        Trigger the handler
+    </div>
+    <div id="log"></div>
+
+    <form action="js06-02.html" method="get">
+        <input type="text" id="text-box1" placeholder="클릭 시 focus, 다른 곳에 클릭 시 blur"><br>
+        <input type="text" id="text-box2" placeholder="클릭 시 focus, 다른 곳에 클릭 시 blur"><br>
+
+        <input type="text" id="text-box3" value="클릭하세요"><br>
+        <button type="button" id="btn-click">클릭 시 글자를 선택함</button>
+        <button type="submit" id="btn-submit">submit 버튼</button>
+    </form>
+
+    <br><hr><br>
+
+    <input type="text" id="key-down" placeholder="키보드 키를 누를 경우 이벤트 동작">;
+    <input type="text" id="key-up" placeholder="키보드 키를 눌렀다가 땠을 경우 이벤트 동작">;
+    <input type="text" id="key-press" placeholder="키보드 키를 누르고 있을 경우 이벤트 동작">;
+
+    <br><hr><br>
+
+    <div class="box" id="box1"></div>
+    <div class="box" id="box2"></div>
+    <div class="box" id="box3"></div>
+</body>
+</html>

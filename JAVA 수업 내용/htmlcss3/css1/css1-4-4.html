@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 셀렉터 사용하기</title>
+    <style>
+        h3, li {
+            color: brown;
+        }
+
+        .warnning {
+            color: red;
+        }
+
+        body.main{
+            background: aliceblue;
+        }
+
+        #list {
+            background: mistyrose;
+        }
+
+        a {display: block;}
+
+        a[target="_blank"] {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        h3::first-letter {
+            color: red;
+        }
+
+        li:hover {
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+<body class="main">
+    <h3>Web programming</h3>
+    <hr>
+    <div>
+        <div class="main">2학기 <strong>학습내용</strong></div>
+        <ul id="list">
+            <li>HTML5</li>
+            <li><strong>CSS</strong></li>
+            <li>JAVAScript</li>
+        </ul>
+        <div class="warnning">60점 이하는 F!</div>
+        <a href="#" target="_blank">속성 선택자 지정된 하이퍼링크</a>
+        <a href="#" target="_self">속성 선택자가 지정되지 않은 하이퍼링크</a>
+        <input type="checkbox" checked>바나나<br>
+        <input type="checkbox">사과
+    </div>
+</body>
+</html>

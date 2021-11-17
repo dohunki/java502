@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 4일차 1번</title>
+    <script>
+        // 배열의 메서드
+        // 배열을 사용할때 도움을 주는 명령어
+        // toString() : 배열의 요소를 문자열로 출력함, 각각의 요소는 쉼표(,)로 구분함
+        // join() : toString()과 동일한 효과를 가지고 있는 명령어, 지정한 문자로 각각의 요소를 구분함
+        var city = ["서울", "대전", "대구", "부산"];
+        
+        var s_toString = city.toString();
+        var s_join = city.join("*");
+
+        console.log("배열 city의 내용을 원본 그대로 확인");
+        console.log(city);
+        console.log("배열 city의 내용을 toString()으로 출력");
+        console.log(s_toString);
+        console.log("배열 city의 내용을 join()으로 출력");
+        console.log(s_join)
+
+        // toString(), join() 을 사용하지 않고 직접 출력하기
+        var strTmp = "";
+        for (var i = 0; i < city.length; i++) {
+            if (i == (city.length - 1)) {
+                strTmp = strTmp + city[i];
+            }
+            else {
+                strTmp = strTmp + city[i] + "@";
+            }
+        }
+
+        console.log(strTmp);
+
+        // split() : 문자열을 지정한 문자를 기준으로 하여 구분하여 배열로 출력하는 명령
+        // 사용법
+        // var 저장할배열명 = 문자열.split("구분할문자열");
+        console.log("원본 문자열 : " + s_join);
+        console.log("split()으로 문자열을 구분");
+        var arr_split = s_join.split("*");
+        console.log(arr_split);
+
+        console.log("\n------------------------------\n");
+
+        // push(), pop()
+        // push() : 지정된 배열의 가장 마지막 부분에 데이터를 추가함
+        // pop() : 지정된 배열의 가장 마지막 부분에 있는 데이터 삭제
+        // 사용법
+        // 배열명.push(마지막에 추가할 데이터);
+        // 배열명.pop()
+        var city = ["서울", "대전", "대구", "부산"];
+        console.log("원본 배열 요소 : " + city.toString());
+        city.push("철원");
+        city.push("춘천");
+        console.log("push를 사용하여 데이터 추가 후 city 요소 : " + city.toString());
+        city.pop();
+        city.pop();
+        city.pop();
+        console.log("pop를 사용하여 데이터 삭제 후 city 요소 : " + city.toString());
+
+        console.log("\n------------------------------\n");
+
+        // unshift(), shift()
+        // unshift() : 지정한 배열의 가장 앞쪽에 데이터를 추가, 추가된 데이터를 합산한 배열의 길이를 반환(출력)
+        // shift() : 지정한 배열의 가장 앞쪽에 있는 데이터를 삭제, 삭제한 데이터를 반환(출력)
+        // 사용법
+        // 배열명.unshift(가장 앞에 추가할 데이터);
+        // var 변수명 = 배열명.unshift(가장 앞에 추가할 데이터); // 추가된 데이터를 포함한 배열의 길이를 반환
+        // 배열명.shift();
+        // var 변수명 = 배열명.shift(); // 배열에서 삭제한 데이터를 변수에 저장
+
+        var city = ["서울", "대전", "대구", "부산"];
+        console.log("원본 배열 요소 : " + city.toString());
+        var cityLength = city.unshift("인천");
+        cityLength = city.unshift("판교");
+        console.log("unshift() 사용 후 배열 city의 요소 : " + city.toString() + "\t배열의 길이 : " + cityLength);
+        var cityName = city.shift();
+        console.log("shift() 사용으로 삭제된 배열 city의 요소 : " + cityName);
+        cityName = city.shift();
+        console.log("shift() 사용으로 삭제된 배열 city의 요소 : " + cityName);
+        console.log("shift() 사용 후 배열 city의 요소 : " + city.toString());
+
+        console.log("\n------------------------------\n");
+
+        // delete : 배열의 지정한 요소를 삭제하는 명령(사용을 권장하지 않음)
+        // 배열의 요소에 구멍을 내는 효과가 있음 (index가 순서대로 존재하지 않음)
+        // 사용법
+        // delete 배열명[index]
+
+        // splice, slice
+        // splice() : 배열에 지정한 위치에 데이터를 추가, 수정, 삭제할 경우 사용
+        // 첫번째 매개변수는 배열의 위치를 지정
+        // 두번째 매개변수는 삭제하고자 하는 요소의 수, 해당 값을 0으로 입력하면 삭제 없이 데이터만 추가
+        // 세번재 매개변수 이후로는 배열에 추가할 데이터
+        // 사용법
+        // 배열명.splice(index, 삭제할 요소 수, 추가할 데이터1, 추가할 데이터2, ...);
+        var city = ["서울", "대전", "대구", "부산"];
+        console.log("원본 배열 city : " + city.toString());
+        city.splice(2, 0, "인천", "판교");
+        console.log("splice()를 사용하여 데이터를 추가한 배열 city : " + city.toString());
+        city.splice(1, 3);
+        console.log("splice()를 사용하여 데이터를 삭제한 배열 city : " + city.toString());
+        city.splice(1, 2, "안산", "성남");
+        console.log("splice()를 사용하여 데이터를 수정한 배열 city : " + city.toString());
+
+        console.log("------------------------");
+        // slice() : splice()와 기능적으로 비슷한 기능을 가지고 있는 명령
+        // slice는 원본 배열에 영향을 주지 않고 원본 배열의 내용을 잘라서 사본을 생성하는 명령
+        // 사용법
+        // var 사본배열명 = 원본배열명.slice(index); // 원본 배열에서 지정한 위치부터 마지막까지의 배열 내용을 복사
+        // var 사본배열명 = 원본배열명.slice(시작index, 종료index); // 시작index부터 종료index 앞까지의 배열을 복사
+        var city = ["서울", "대전", "대구", "부산"];
+        console.log("원본 배열 city : " + city.toString());
+        var city_slice = city.slice(2);
+        console.log("원본 배열 city : " + city.toString());
+        console.log("배열 city_slice : " + city_slice.toString());
+        city_slice = city.slice(1, 3);
+        console.log("원본 배열 city : " + city.toString());
+        console.log("배열 city_slice : " + city_slice.toString());
+
+        console.log("\n------------------------------\n");
+        // concat
+        // concat() : 기존의 두 배열을 하나의 배열로 합치는 명령
+        // 사용법
+        // var 새배열명 = 배열1.concat(배열2);
+        var car1 = ["모닝", "아반떼", "소나타", "그랜저"];
+        var car2 = ["k3", "k5", "k7", "k9"];
+        console.log("배열 car1 : " + car1.toString());
+        console.log("배열 car2 : " + car2.toString());
+        var newCar = car1.concat(car2);
+        console.log("concat()을 사용하여 합쳐진 배열 : " + newCar.toString());
+
+        console.log("\n------------------------------\n");
+        // sort, reverse
+        // sort() : 배열의 내용을 오름차순으로 정렬하는 명령
+        // reverse() : 배열의 내용을 현재의 반대로 정렬하는 명령, 기존의 순서에서 반대 순서로 정렬
+        // 사용법
+        // 배열명.sort();
+        // 배열명.reverse();
+        var arrNum = [1, 2, 7, 3, 9, 6, 5, 4, 8];
+        console.log("원본 배열의 순서 : " + arrNum.toString());
+        arrNum.sort();
+        console.log("sort() 사용 후 배열 순서 : " + arrNum.toString());
+        arrNum.reverse();
+        console.log("reverse() 사용 후 배열 순서 : " + arrNum.toString());
+        var arrNum = [1, 2, 7, 3, 9, 6, 5, 4, 8];
+        arrNum.reverse();
+        console.log("정렬 전 reverse()를 사용 시 배열 순서 : " + arrNum.toString());
+
+        console.log("\n------------------------------\n");
+
+        // forEach
+        // forEach() : 배열의 내용을 모두 출력하는 명령, 배열의 각각의 요소에 대해서 함수를 호출함
+        // forEach 사용 시 지정한 함수를 호출할 수 있으며, 해당 함수는 매개변수로 index, value, array를 가지고 있음
+            // index : 배열의 해당 순서의 index 번호
+            // value : 배열의 해당 순서의 데이터
+            // array : 배열의 전체 데이터
+        // 사용법
+        // var 배열명 = [데이터1, 데이터2, 데이터3, ...];
+        // function 함수명(value, index, array) {
+        //     함수 실행 시 실행될 소스코드 ...
+        // }
+        // 배열명.forEach(함수명);
+        var city = ["서울", "대전", "대구", "부산"];
+        var tmp = "";
+        city.forEach(forEachFunc);
+        console.log(tmp);
+
+        function forEachFunc(value, index, array) {
+            tmp = tmp + "index : " + index + "\n데이터 : " + value + "\n";
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

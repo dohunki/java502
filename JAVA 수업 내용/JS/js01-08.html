@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 연산자
+            피연산자에게 연산 명령을 내리기 위해서 사용되는 기호
+            산술 연산자 : 일반적으로 사칙연산에 사용되는 연산자,
+                         +, -, *, /, %(나머지 연산자)
+            논리 연산자 : 논리 연산에 사용되는 연산자,
+                         &&(논리곱 and), ||(논리합 or), !(논리 부정 not)
+            비교 연산자 : 수학에서 사용하는 비교 연산자, 
+                         <, >, <=, >=, ==, !=
+            대입 연산자 : 오른쪽의 테이터를 왼쪽의 변수에 저장하는 연산자, 산술 연산자와 함께 사용할 수 있음,
+                         =, +=, -=, *=, /=, %=
+            단항 연산자 : 연산에 사용되는 피 연산자가 1개인 연산자,
+                         ++, --, !
+            삼항 연산자 : 연산에 사용되는 피 연산자가 3개인 연산자,
+                         (조건) ? 선택1(true) : 선택2(false);
+            문자열 연산자 : 2개 이상의 문자열을 하나의 문자열로 합하여 연결하는 연산자, 
+                        이 연산자를 사용하여 문자열과 다른 데이터 타입을 연결하면 다른 타입의 데이터가 
+                        문자열 타입으로 변환되어 사용됨, 기호는 '+'
+         */   
+            var stdName1 ="HongGilDong";
+            var stdName2 ='HongGilDong';
+
+            // var stdName = stdName1 + stdName2;
+
+            console.log(stdName1);
+            console.log(stdName2);
+            // console.log(stdName3); // error not defined
+
+            console.log("/n/n---------------------------------/n/n");
+            var str = "iphone13 pro max의 가격은 ";
+            var cost = 1000000;
+            var vat = 350000;
+
+            // 숫자끼리 연산
+            console.log(cost + vat);
+            // 문자와 숫자 연산
+            // 문자와 숫자를 연산하면 둘다 문자열이 됨
+            console.log(str + cost);
+       
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

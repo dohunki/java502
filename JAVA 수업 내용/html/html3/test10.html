@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시간 정보를 입력하는 폼 활용</title>
+</head>
+<body>
+    <h3>시간 정보 입력 HUML5 폼 요소들</h3>
+    초기세팅 : 2016년 9월 1일 밤 9시 40분(10초 32)<br>
+    시간을 변경해 보세요
+    <hr>
+    <div>
+        <form>
+            <pre>
+                month : <input type="month" value="2016-09"><br>
+                week : <input type="week" value="2016-W36"><br>
+                date : <input type="date" value="2016-09-01"><br>
+                time : <input type="time" value="21:30"><br>
+                local : <input type="datetime-local" value="2016-09-01 T21:30:10.32"><br>
+            </pre>
+        </form>
+    </div>
+
+    <div>
+        <h3>시간 정보 응용</h3>
+        <hr>
+        <form action="">
+            <table>
+                <tr>
+                    <td>생일</td>
+                    <input type="date" value="2000-01-01">
+                </tr>
+                <tr>
+                    <td>생일파티시간</td>
+                    <input type="time">
+                </tr>
+                <tr>
+                    <td>생일파티장소</td>
+                    <input type="text">
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

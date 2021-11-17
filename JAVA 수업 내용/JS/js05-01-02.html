@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 5일차 1번</title>
+    <script>
+      
+        var text1= "함수 선언 전 호출";
+        var text2= "함수 선언 후 호출";
+
+        function printPara(parameter) {
+            document.write("함수 호출 메시지 : " + parameter +"<br>");
+        }
+        
+        printPara(text1);
+        printPara(text2);
+
+        function printMsg2(name, age) {
+            alert("학생 이름 : "  +name);
+            alert("학생 나이 : "  +age);
+        }
+        
+    </script>
+</head>
+<body>
+    <button type= "button" onclick="printMsg2('홍길동', 21)">학생 정보</button>
+</body>
+</html>

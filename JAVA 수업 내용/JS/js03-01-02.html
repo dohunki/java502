@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>while문</title>
+    <script>
+        /*
+            while문
+            -for문 동일한 반복문
+            -while문은 for문과 달리 초기화변수를 while문 시작 시 선언하지 않고,
+                while문 외부에 미리 
+            -카운트 부분을 while문 내부에서 처리해야 함
+            -카운트 부분의 위치에 따라서 반복 실행되는 결과값이 다르게 출력될 수 있음
+
+            사용법
+            -var count = 0; // 초기화 변수
+            -while (반복조건) {
+                반복 조건이 true일 경우 반복 실행할 코드 ...
+                초기와 변수 카운트
+            } 
+        */
+
+    //    var count= 0; //초기화 변수
+    //    while (count < 10) { //반복조건
+    //        console.log("count의 값 : " + count);
+    //        count++; //초기화 변수 카운트
+    //    }
+
+        console.log("/n/n -------------------------/n/n");
+
+       /*
+            do ~ while문
+            -기본적으로 while문과 동일한 반복문
+            -while문은 반복 조건이 처음부터 true가 아닐 경우 한번도 실행되지 않음
+            -do ~ while문은 반복 조건이 처음부터 true가 아닐 경우에도 한번은 무조건
+                실행하는 while문
+            -do ~ while문은 반복 조건의 확인이 아래쪽에 있기 때문에 무조건 한번은 실행함
+
+            사용법
+            -var count= 0;
+            do {
+                반복 조건이 true일 경우 반복 실행될 소스 코드...
+                초기화 변수 카운트
+            }
+            while (반복조건) 
+       */
+
+
+    //    var count= 10; //초기화 변수
+    //    do {
+    //        console.log("d0 ~ while count의 값 : " + count); // 반복 실행 코드
+    //        count++; //초기화 변수 카운트
+    //    }
+    //    while (count < 10)  //반복조건
+       
+        console.log("/n/n -------------------------/n/n");
+
+       /*
+            보조제어문
+            -break, continue
+            -barak : 제어문 사용시 break문을 만나면 즉시 제어문 종료
+            -continue : 제어문 사용시 continue문을 만나면 현재 로직만 종료하고
+                다음 로직으로 이동
+       */
+
+       console.log("------break------")
+
+       for (var i= 0; i < 10; i++) {
+           if (i== 5) {
+               console.log("break문 사용");
+               break;
+           }
+           console.log("i의 값: "+i);
+       }
+
+       console.log("------continue------")
+
+       for (var i= 0; i < 10; i++) {
+           if (i== 5) {
+               console.log("continue문 사용");
+               continue; 
+               //해당 반복문에서 continue 실행시 해당 루프를 중지한 다음, 
+               //상위 루프로 이동
+           }
+           console.log("i의 값: "+i);
+       }
+    </script>
+    
+
+
+    
+
+</head>
+<body>
+    
+</body>
+</html>

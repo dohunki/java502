@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-wrap</title>
+    <style>
+        /* flex-wrap : 자식태그의 크기가 클 경우 다음 라인으로 줄 변경 설정 */
+        /* wrap(줄바꿈), nowrap(줄바꿈 안함), wrap-reverse(줄 바꿈 후 위로 올라감) */
+        #div03 { margin: 20px 0px; }
+        #div03 .container {
+            display: flex;
+            background-color: dodgerblue;
+            margin: 10px;
+        }
+
+        #div03 .wrap { flex-wrap: wrap; }
+        #div03 .nowrap { flex-wrap: nowrap; }
+        #div03 .wrap-reverse { flex-wrap: wrap-reverse; }
+
+        #div03 .container > div {
+            background-color: lightgray;
+            width: 100px;
+            margin: 10px;
+            text-align: center;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h3>flex-wrap 사용하기</h3>
+    <div id="div03">
+        <div class="container wrap">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+        </div>
+        <div class="container nowrap">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+        </div>
+        <div class="container wrap-reverse">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+        </div>
+    </div>
+</body>
+</html>

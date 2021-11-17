@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>align-items</title>
+    <style>
+         /* align-items : 자식태그들의 위치를 설정 */
+        /* flex-start(상단), center(중앙), flex-end(하단), stretch(채움), 
+        baseline(다른 태그들의 평균에 위치함) */
+        #div06 .container {
+            background-color: dodgerblue;
+            display: flex;
+            height: 300px;
+            margin: 10px;
+        }
+
+        #div06 .start { align-items: flex-start; }
+        #div06 .center { align-items: center; }
+        #div06 .end { align-items: flex-end; }
+        #div06 .stretch { align-items: stretch; }
+        #div06 .baseline { align-items: baseline; }
+
+        #div06 .container > div {
+            width: 100px;
+            margin: 10px;
+            text-align: center;
+            font-size: 32px;
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <h3>align-items 사용하기</h3>
+    <div id="div06">
+        <div class="container start">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="container center">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="container end">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="container stretch">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="container baseline">
+            <div><h1>1</h1></div>
+            <div><h6>2</h6></div>
+            <div><h3>3</h3></div>
+            <div><small>4</small></div>
+        </div>
+    </div>
+</body>
+</html>

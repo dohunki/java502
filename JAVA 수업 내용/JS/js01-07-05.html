@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전역변수와 지역변수 이해하기5</title>
+    <script>
+         function getGrade5() {
+            var kor5 =80; //지역변수 선언 및 테이터 저장
+                // 지역변수와 전역변수의 이름이 동일할 경우 지역변수가 우선권을 가지고 있음
+            console.log("지역변수 국어 점수 : " + kor5);
+        }
+
+        var kor5 = 100;
+        getGrade5();
+        console.log("전역변수 국어 점수 : " + kor5);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

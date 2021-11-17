@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 2일차 5번파일</title>
+    <script>
+        // switch ~ case문
+        // 조건문 중 하나
+        // swtich ~ case 문은 조건식의 결과가 지정된 값으로 이루어져 있을 경우 사용(요일, 월, 년도 같은 상수 값)
+        // 다중 if ~ else 문은 조건식의 결과가 일정한 범위값일 경우 사용
+        // switch ~ case 문은 다중 if ~ else 문으로 모두 표현이 가능함
+        // 사용법
+        // switch (조건식) {
+        //     case 값1:
+        //     조건이 case 값1에 해당할 경우 실행할 코드 ...
+        //     break;
+
+        //     case 값2:
+        //     조건이 case 값2에 해당할 경우 실행할 코드 ...
+        //     break;
+
+        //     case 값n:
+        //     조건이 case 값n에 해당할 경우 실행할 코드 ...
+        //     break;
+
+        //     default:
+        //     조건이 모든 case값에 해당하지 않을 경우 실행할 코드 ...
+        //     다중 if ~ else 문의 마지막에 있는 else 문과 동일한 기능을 가지고 있음
+        //     default 를 반드시 사용할 필요는 없음
+        // }
+
+        // break : 제어문 내에서 사용하는 보조 제어문으로 break문을 만나면 즉시 가장 가까운 제어문을 종료함
+        // switch ~ case 문에서 case문에 break문을 입력하지 않으면 break문을 만날때까지 아래에 있는 모든 case문을 실행함
+
+        var day = "";
+        var week = new Date().getDay();
+        console.log(week);
+        // Date 클래스 : 자바스크립트에서 지원하는 날짜 관련 오브젝트
+        // getDay() : 현재 날짜를 기준으로 현재 요일을 숫자로 출력하는 함수, 0 ~ 6까지 출력, 0 : 일요일, 1 : 월요일, 6 : 토요일
+
+        switch (week) {
+            case 0:
+            day = "일요일";
+            break;
+
+            case 1:
+            day = "월요일";
+            break;
+
+            case 2:
+            day = "화요일";
+            break;
+
+            case 3:
+            day = "수요일";
+            break;
+
+            case 4:
+            day = "목요일";
+            break;
+
+            case 5:
+            day = "금요일";
+            break;
+
+            case 6:
+            day = "토요일";
+            break;
+
+            default:
+            day = "없는 요일";
+            break;
+        }
+
+        console.log("오늘은 " + day + "입니다.");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

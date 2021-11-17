@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 5일차 4번</title>
+    <script>
+        /*
+        문제 1) 2개의 숫자를 사칙연산으로 연산하는 프로그램을 함수형태 1 ~ 4 를 모두 생성하여 
+        계산하는 프로그램을 작성하시오.
+        반환값이 있는 경우에는 함수 내부에서 화면 출력을 하지 않고, 결과만 반환받아 외부에서 
+        화면 출력하도록 함
+        함수명 ;
+        1번 형태 : sum1(), sub1(), multi1(), div1()
+        2번 형태 : sum2(), sub2(), multi2(), div2()
+        3번 형태 : sum3(), sub3(), multi3(), div3()
+        4번 형태 : sum4(), sub4(), multi4(), div4()
+        */
+
+        function sum1() {
+            var a= 10
+            var b= 20
+            var c= a+b
+            console.log(c)
+        }
+
+        function sub1() {
+            var a= 10
+            var b= 20
+            var c= a-b
+            console.log(c)
+        }
+
+        function multi1() {
+            var a= 10
+            var b= 20
+            var c= a*b
+            console.log(c)
+        }
+
+        function div1() {
+            var a= 10
+            var b= 20
+            var c= a/b
+            console.log(c)
+        }
+
+        sum1();
+        sub1();
+        multi1();
+        div1();
+
+        // console.log("\n----------------------------------\n");
+        document.write("<br>----------------------------------<br>");
+
+        function sum2(a, b) {
+            var c= a+b;
+            console.log(c);
+        }
+
+        function sub2(a, b) {
+            var c= a-b;
+            console.log(c);
+        }
+
+        function multi2(a, b) {
+            var c= a*b;
+            console.log(c);
+        }
+
+        function div2(a, b) {
+            var c= a/b;
+            console.log(c);
+        }
+
+        sum2(20, 30);
+        sub2(20, 30);
+        multi2(20, 30);
+        div2(20, 30);
+
+        // console.log("\n----------------------------------\n");
+        document.write("<br>----------------------------------<br>");
+
+        function sum3() {
+            var a= 100
+            var b= 200
+            var c= a+b
+            return c;
+        }
+
+        function sub3() {
+            var a= 100
+            var b= 200
+            var c= a-b
+            return c;
+        }
+
+        function multi3() {
+            var a= 100
+            var b= 200
+            var c= a*b
+            return c;
+        }
+
+        function div3() {
+            var a= 100
+            var b= 200
+            var c= a/b
+            return c;
+        }
+
+        console.log(sum3());
+        console.log(sub3());
+        console.log(multi3());
+        console.log(div3());
+
+        // console.log("\n----------------------------------\n");
+        document.write("<br>----------------------------------<br>");
+
+        function sum4(a, b) {
+            var c= a+b
+            return c;
+        }
+
+        function sub4(a, b) {
+            var c= a-b
+            return c;
+        }
+
+        function multi4(a, b) {
+            var c= a*b
+            return c;
+        }
+
+        function div4(a, b) {
+            var c= a/b
+            return c;
+        }
+
+        console.log(sum4(200, 300));
+        console.log(sub4(200, 300));
+        console.log(multi4(200, 300));
+        console.log(div4(200, 300));
+
+        // console.log("\n\n----------------------------------\n\n");
+        document.write("<br>----------------------------------<br>");
+
+      
+        /*
+        문제 2) 점수를 입력받아 성적 등급을 출력하는 프로그램을 작성하시오.
+        A : 90 이상, B : 80 이상, C : 70 이상, D : 60 이상, F : 60 미만
+        출력형태 : '당신의 점수는 xx점이고, y 학점입니다.'
+        성적 등급을 나누는 로직 부분을 함수로 처리해야 함
+        */
+        function grade() {
+            if (score>= 90) {
+                level= "A";
+            }
+            else if (score>= 80) {
+                level= "B";
+            }
+            else if (score>= 70) {
+                level= "C";
+            }
+            else if (score>= 60) {
+                level= "D";
+            }
+            else {
+                level= "F";
+            }
+        }
+
+        var score= prompt("점수를 입력해 주세요.")
+        score= Number(score);
+        var level= "";
+        grade();
+
+        // console.log("당신의 점수는 "+ score+"점이고, 학점은 "+ level+ "입니다.");
+        document.write("당신의 점수는 "+ score+"점이고, 학점은 "+ level+ "입니다.");
+
+
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

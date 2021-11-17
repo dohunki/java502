@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>표만들기</title>
+
+    <style>
+        #div02 td {
+            min-width: 100px;
+        }
+
+        #div03 td {
+            min-width: 100px;
+            min-height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h3>기본 구조를 가진 표</h3>
+        <hr>
+        <table border="1">
+            <caption>1학기 성적</caption>
+            <thead>
+                <tr>
+                    <th>이름</th>
+                    <th>html</th>
+                    <th>css</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>합</th>
+                    <th>225</th>
+                    <th>230</th>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr>
+                    <td>황기태</td>
+                    <td>80</td>
+                    <td>70</td>
+                    <td>90</td>
+                </tr>
+                <tr>
+                    <td>이재문</td>
+                    <td>95</td>
+                    <td>99</td>
+                </tr>
+                <tr>
+                    <td>이병은</td>
+                    <td>40</td>
+                    <td>61</td>
+                </tr>
+            </tbody>
+        </table>
+        <br><hr><br>
+        <table border="1">
+            <caption>thead, tbody, tfoot 사용 안한 table</caption>
+            <tr>
+                <td>황기태</td>
+                <td>80</td>
+                <td>70</td>
+            </tr>
+            <tr>
+                <td>이재문</td>
+                <td>95</td>
+                <td>99</td>
+            </tr>
+            <tr>
+                <td>이병은</td>
+                <td>40</td>
+                <td>61</td>
+            </tr>
+            
+            <tr>
+                <th>이름</th>
+                <th>html</th>
+                <th>css</th>
+            </tr>
+            <tr>
+                <th>합</th>
+                <th>225</th>
+                <th>230</th>
+            </tr>
+        </table>
+    </div>
+    <br><hr><br>
+    <!-- 테이블을 합쳐주는 속성 -->
+    <!-- colspan : 테이블의 여러 칸을 하나로 합쳐주는 속성 -->
+        <!-- td, th에서 사용 -->
+        <!-- 합하고 싶은 칸의 수를 입력 -->
+    <!-- rowspan : 테이블의 라인을 하나로 합쳐주는 속성-->
+        <!-- td, th에서 사용 -->
+        <!-- 합하고 싶은 라인의 수를 입력 -->
+    <div id="div02">
+        <h3>colspan 사용하기</h3>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th colspan="2">name</th>
+                    <th>job</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="2">유재석</td>
+                    <td>방송인</td>
+                </tr>
+                <tr>
+                    <td>아이유</td>
+                    <td></td>
+                    <td>가수</td>
+                </tr>
+                <tr>
+                    <td>유인나</td>
+                    <td colspan="2">배우</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="div03">
+        <h3>rowspan 사용</h3>
+        <table border="1">
+            <tr>
+                <th>이름</th>
+                <th>유재석</th>
+            </tr>
+            <tr>
+                <td rowspan="2">직업</td>
+                <td>방송인</td>
+            </tr>
+            <tr>
+                <!-- <td>직업</td> -->
+                <td>코메디언</td>
+            </tr>
+        </table>
+    </div>
+
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

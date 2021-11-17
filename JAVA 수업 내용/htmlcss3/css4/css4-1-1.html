@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 4일차</title>
+    <style>
+        /* flex box 하위 요소 */
+
+        /* order : 플렉스 항목의 순서를 지정하는 속성, 기본값 0, 입력값은 숫자를 사용 */
+        /* order를 사용하면 html의 순서를 변경하지 않고 원하는 순서대로 변경이 가능함 */
+
+       #div01 .container {
+            display: flex;
+            background-color: lightgray;
+        }
+
+        #div01 .container > div {
+            background-color: dodgerblue;
+            color: white;
+            width: 100px;
+            margin: 10px;
+            text-align: center;
+            font-size: 32px;
+        }
+
+    /* order : 플랙스 항목의 순서를 지정하는 속성, 기본값 0, 입력값은 숫자를 사용 */
+        #div02 .container {
+            display: flex;
+            background-color: lightgray;
+            align-items: stretch;
+        }
+
+        #div02 .container > div {
+            background-color: dodgerblue;
+            color: white;
+            margin: 10px;
+            width: 100px;
+            text-align: center;
+            font-size: 32px;
+            line-height: 75px;
+        }
+
+        /* float를 사용하여 order와 같은 화면을 구현한 CSS */
+        #div02 .clearfix {
+            background-color: lightgray;
+        }
+
+        #div02 .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        #div02 .clearfix > div {
+            float: left;
+            background-color: dodgerblue;
+            color: white;
+            margin: 10px;
+            width: 100px;
+            text-align: center;
+            font-size: 32px;
+            line-height: 75px;
+        }
+
+    </style>
+</head>
+<body>
+    <h3>flex container 사용하기</h3>
+    <div id="div01">
+        <div class="container">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+        </div>
+        <br><hr><br>
+            <div id="div02">
+                <h3>order를 사용하여 순서 변경</h3>
+                <div class="container">
+                    <div style="order: 4;">1</div>
+                    <div style="order: 3;">2</div>
+                    <div style="order: 2;">3</div>
+                    <div style="order: 1;">4</div>
+                </div>
+                <hr>
+                <h3>float을 사용하여 순서 변경</h3>
+                <!-- float를 사용할 경우 순서를 변경하려면 html 태그의 순서를 변경해야 함 -->
+                <div class="clearfix">
+                    <div>4</div>
+                    <div>2</div>
+                    <div>1</div>
+                    <div>3</div>
+                </div>
+            </div>
+</body>
+</body>
+</html>

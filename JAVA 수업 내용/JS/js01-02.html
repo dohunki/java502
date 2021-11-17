@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="./1108/njs1.js"></script>
+</head>
+
+    <p>
+        <!-- 버튼을 클릭하면 메시지 창 출력 -->
+        <button type="button" onclick="alert('외부 자바스크립트 파일')">버튼 출력</button>
+    </p>
+</html>
+
+<body>
+    <button type="button" onclick="alert('inlin 방식 이벤트 동작')"> 클릭 시 inline방식으로 클릭 이벤트 발생</button>
+    
+    <button type="button" id="btn">script 태그의 src 속성을 사용하여 외부파일을 로드하여 사용</button>
+    <script src="./js01-01.js"></script>
+    <!--<script>
+        var btn =document.querySelector("#btn")
+        btn.addEventListener("click", function() {
+            alert("외부파일 js01-01.js 파일을 로드하여 사용");
+        }); 
+    </script>-->    
+</body>

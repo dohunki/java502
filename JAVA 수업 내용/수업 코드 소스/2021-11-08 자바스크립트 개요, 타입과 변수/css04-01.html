@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS4일차</title>
+    <style>
+        /* flex box 하위 요소 */
+
+        /* order : 플렉스 항목의 순서를 지정하는 속성, 기본값 0, 입력값은 숫자를 사용 */
+        /* order를 사용하면 html의 순서를 변경하지 않고 원하는 순서대로 변경이 가능함 */
+
+        /* flex : flex-grow, flex-shrink, flex-basis 의 기능을 한번에 사용하는 속성 */
+        /* flex 순서 : flex-grow, flex-shrink, flex-basis 순서대로 입력하면 됨 */
+
+        /* flex-grow : 플렉스 항목의 크기를 조절하는 속성, 기본값은 0, 값은 숫자로 입력 */
+        /* 다른 플렉스 항목이 1일 때 나머지 항목의 값이 2이면, 1인 항목보다 2배 큰 크기를 가짐 */
+
+        /* flex-shrink : 플렉스 항목의 크기를 조절하는 속성(줄일때 사용), 기본값은 1, 값은 숫자를 입력 */
+        /* 플렉스 항목의 크기를 줄일 때 비율에 맞춰서 줄이는 기능, 0 사용 시 해당 태그는 같은 비율로 줄어들지 않음 */
+
+        /* flex-basis : 플렉스 항목의 기본 크기를 설정 */
+
+        /* align-self : 부모태그에서 설정한 align-items 속성에 의해서 설정된 기본 정렬 방식을 재정의함 */
+        /* 부모태그에서 align-items로 자식 태그 전체 기본 정렬를 설정하고 태그 각각의 정렬을 변경하기 위해서 align-self를 사용함 */
+        /* auto(기본값), stretch, center, flex-start, flex-end, baseline*/
+
+        #div01 .container {
+            display: flex;
+            background-color: lightgray;
+        }
+
+        #div01 .container > div {
+            background-color: dodgerblue;
+            color: white;
+            margin: 10px;
+            width: 100px;
+            text-align: center;
+            font-size: 32px;
+        }
+
+        .container {
+            display: flex;
+            background-color: lightgray;
+            align-items: flex-start;
+        }
+
+        .container > div {
+            background-color: dodgerblue;
+            color: white;
+            margin: 10px;
+            width: 100px;
+            text-align: center;
+            font-size: 32px;
+            line-height: 75px;
+        }
+
+        /* float를 사용하여 order와 같은 화면을 구현한 CSS */
+        #div02 .clearfix {
+            background-color: lightgray;
+        }
+
+        #div02 .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        #div02 .clearfix > div {
+            float: left;
+            background-color: dodgerblue;
+            color: white;
+            margin: 10px;
+            width: 100px;
+            text-align: center;
+            font-size: 32px;
+            line-height: 75px;
+        }
+
+        #div07 .container {
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div01">
+        <div class="container">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+        </div>
+    </div>
+    <br><hr><br>
+    <div id="div02">
+        <h3>order를 사용하여 순서 변경</h3>
+        <div class="container">
+            <div style="order: 4;">1</div>
+            <div style="order: 3;">2</div>
+            <div style="order: 2;">3</div>
+            <div style="order: 1;">4</div>
+        </div>
+        <hr>
+        <h3>float을 사용하여 순서 변경</h3>
+        <!-- float를 사용할 경우 순서를 변경하려면 html 태그의 순서를 변경해야 함 -->
+        <div class="clearfix">
+            <div>4</div>
+            <div>2</div>
+            <div>1</div>
+            <div>3</div>
+        </div>
+    </div>
+    <br><hr><br>
+    <div id="div03">
+        <h3>flex-grow 사용하기</h3>
+        <div class="container">
+            <div style="flex-grow: 1;">1</div>
+            <div style="flex-grow: 2;">2</div>
+            <div style="flex-grow: 3;">3</div>
+        </div>
+    </div>
+    <br><hr><br>
+    <div id="div04">
+        <h3>flex-shrink</h3>
+        <div class="container">
+            <div>1</div>
+            <div>2</div>
+            <div style="flex-shrink: 0;">3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+        </div>
+    </div>
+    <br><hr><br>
+    <div id="div05">
+        <div class="container">
+            <div>1</div>
+            <div>2</div>
+            <div style="flex-basis: 200px;">3</div>
+            <div>4</div>
+        </div>
+    </div>
+    <br><hr><br>
+    <div id="div06">
+        <h3>flex 속성 사용하기 </h3>
+        <div class="container">
+            <div>1</div>
+            <div>2</div>
+            <!-- grow : 0, shrink : 0, basis: 200px 을 사용하여 확대 불가능, 축소 불가능, 기본 크기 200px 사용 -->
+            <div style="flex: 0 0 200px">3</div>
+            <div>4</div>
+        </div>
+    </div>
+    <br><hr><br>
+    <div id="div07">
+        <h3>align-self 사용하기</h3>
+        <div class="container">
+            <div>1</div>
+            <div>2</div>
+            <div style="align-self: flex-end">3</div>
+            <div>4</div>
+        </div>
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

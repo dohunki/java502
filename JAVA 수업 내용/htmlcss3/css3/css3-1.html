@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float 속성을 사용하여 메뉴 만들기</title>
+</head>
+<style>
+    html, body {
+        margin: 0;
+        padding: 0;
+    }
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: black;
+    }
+
+    li {
+        float: left;
+    }
+
+    li a {
+        display: inline-block;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    li a:hover {
+        background-color: cornflowerblue;
+    }
+
+    .active {
+        background-color: red;
+    }
+</style>
+<body>
+    
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#" class="active">New</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">About</a></li>
+    </ul>
+</body>
+</html>

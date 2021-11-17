@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전환</title>
+    <style>
+        span {
+            transition: font-size 3s;
+        }
+        span:hover {
+            font-size: 500%;
+        }
+
+        /* transition-delay : transition이 동작하기까지 지연 시간을 설정함 */
+        /* transition-timing-function : transition 동작 패턴을 설정함 */
+        /* ease : 시작은 느리고 중간에 빠르고 종료 시 느림, 기본값 */
+        /* linear : 처음부터 끝까지 동일한 속도  */
+        /* ease-in : 시작이 느림 */
+        /* ease-out : 종료가 느림 */
+        /* ease-in-out : 시작과 종료가 느림 */
+        /* cubic-bezier(n,n,n,n) */
+        .box {
+            width: 100px;
+            height: 100px;
+            background: dodgerblue;
+            margin-bottom: 10px;
+        }
+
+        .box:hover {
+            width: 300px;
+            /* height: 300px; */
+        }
+
+        .transition {
+            transition: width 5s, 
+            /* height 5s; */
+        }
+
+        .ease {
+            transition: width 5s;
+            transition-delay: 2s;
+            transition-timing-function: ease;
+        }
+        
+        .linear {
+            transition: width 5s;
+            transition-timing-function: linear;
+        }
+
+        .ease-in {
+            transition: width 5s;
+            transition-timing-function: ease-in;
+        }
+
+        .ease-out {
+            transition: width 5s;
+            transition-timing-function: ease-out;
+        }
+
+        .ease-in-out {
+            transition: width 5s;
+            transition-timing-function: ease-in-out;
+        }
+
+    </style>
+</head>
+<body>
+    <h3>font-size에 대한 전환</h3>
+    <hr>
+    <p><span>꽝!</span> 글자에 마우스를 올려보세요</p>
+    <div></div>
+
+    <div>
+        <div class="box easy">ease</div>
+        <div class="box 1inear">linear</div>
+        <div class="box ease-in">ease-in</div>
+        <div class="box easy-out">ease-out</div>
+        <div class="box easy-in-out">ease-in-out</div>
+
+    </div>
+
+</body>
+</html>

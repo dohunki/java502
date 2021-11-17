@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>버튼이 있는 입력 폼</title>
+</head>
+<body>
+    <h3>버튼을 만들자</h3>
+    <hr>
+    <form action="#">
+        검색: <input type="text" size="10" value="">
+            <input type="button" value="Q1" onclick="alert('input태그 type:button 방식');">
+            <button type="button" onclick="alert('input태그 type:button 방식');">Q2</button>
+            <br>
+
+        submit 버튼 : <input type="submit" value="전송1" onclick="alert('input태그 submit 방식');">
+                    <button type="submit" onclick="alert('input태그 submit 방식');">전송2</button>
+                    <br>
+
+        reset 버튼 : <input type="reset" value="리셋1" onclick="alert('input태그 reset 방식');">
+                    <button type="reset" onclick="alert('input태그 reset 방식');">리셋2</button>
+                    <br>
+
+        image 버튼 : <input type="image" src="./pengsu01.jpg"  onclick="alert('input태그 image 방식');" alt="이미지 버튼">
+                    <button type="button"  onclick="alert('input태그 image 방식');">
+                        <img src="./pengsu01.jpg" alt="이미지 버튼">
+                    </button>
+    </form>
+</body>
+</html>

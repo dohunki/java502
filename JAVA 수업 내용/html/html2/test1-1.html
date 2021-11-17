@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리스트 사용하기</title>
+</head>
+<body>
+    <!-- div 태그는 공간을 설정하는 태그 -->
+    <!-- 혼자서는 사용되지 않고 다른 태그의 부모 태그로 사용되며, 특정한 영역을 설정하여 사용하는 태그 -->
+    <div>
+        <h3>라면을 끓이는 순서</h3>
+        <hr>
+        <ol type="A" start="K">
+            <li>물을 끓인다.</li>
+            <li>라면과 스프를 넣는다.</li>
+            <li>파를 썰어 넣는다.</li>
+            <li>5분 후 먹는다.</li>
+        </ol>
+        <ol type="A" start="11">
+            <li>물을 끓인다.</li>
+            <li>라면과 스프를 넣는다.</li>
+            <li>파를 썰어 넣는다.</li>
+            <li>5분 후 먹는다.</li>
+        </ol>
+    </div>
+    <div>
+        <h3>내가 좋아하는 음식</h3>
+        <hr>
+        <!-- ul 태그는 css의 list-style-type 속성을 사용하여 모양을 변경할 수 있음, disc는 기본값임 -->
+        <ul style="list-style-type: disc;">
+            <li>뼈다귀 해장국</li>
+            <li>돼지국밥</li>
+            <li>콩나물해장국</li>
+        </ul>
+        <ul style="list-style-type: circle;">
+            <li>뼈다귀 해장국</li>
+            <li>돼지국밥</li>
+            <li>콩나물해장국</li>
+        </ul>
+        <ul style="list-style-type: square;">
+            <li>뼈다귀 해장국</li>
+            <li>돼지국밥</li>
+            <li>콩나물해장국</li>
+        </ul>
+        <ul style="list-style-type: none;">
+            <li>뼈다귀 해장국</li>
+            <li>돼지국밥</li>
+            <li>콩나물해장국</li>
+        </ul>
+    </div>
+    <div>
+        <h3>웹 브라우저의 종류</h3>
+        <hr>
+        <!-- dl은 ul이나 ol과는 조금 사용 방법이 다름 -->
+        <!-- ul, ol은 자식 태그로 li를 가지고 있지만 dl은 dt와 dd를 가지고 있음 -->
+        <!-- dt는 dl에서 제목을 입력 시 사용 -->
+        <!-- dd는 dl에서 내용을 입력 시 사용 -->
+        <dl>
+            <dt><strong>internet Explorer</strong></dt>
+            <dd>마이크로소프트에서 만든 브라우저로 현재 국내에서는 인터넷 뱅킹으로 사용함</dd>
+            <dt><strong>FireFox</strong></dt>
+            <dd>Mozilla 재단에서 오픈 소스로 만든 것으로 W3C의 웹 표준을 선도</dd>
+            <dt><strong>Chrome</strong></dt>
+            <dd>구글에서 만든 것으로 좋은 디버거를 갖추고 있어 디버깅에서 많이 사용</dd>
+        </dl>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        문제 6) 1 ~ 10 까지의 숫자의 합을 출력하는 프로그램을 
+            while문을 사용하여 작성하세요.
+        */
+        var sum= 0;
+        var count=1;            // i=0
+
+        while (count<=10) {
+            sum= sum+ count;    // i++
+            count++            //  sum =sum+ i
+        }   
+    //    console.log("1부터 10까지의 합은 : "+ sum +" 입니다.")
+       document.write("1부터 10까지의 합은 : "+ sum +" 입니다.")
+
+
+    //    console.log("/n/n -------------------------------------- /n/n")
+       document.write("<br> -------------------------------------- <br>")
+
+         /*
+        문제 7) 사용자 입력을 통하여 원하는 구구단의 단수를 입력받고 해당하는
+             구구단 단수를 출력하는 프로그램을 while문을 사용하여 작성하세요.
+        */
+
+        var dan= prompt("출력할 구구단의 단수를 입력해 주세요");
+        dan= Number(dan);
+
+        var count= 1
+        // count= Number(count);
+
+
+        while (count<=9) {
+            // console.log(dan+ "*"+count+"="+ dan*count )
+            document.write(dan+ "*"+count+"="+ dan*count )
+            count++
+
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

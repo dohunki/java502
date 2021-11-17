@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 프로그램 만들기</title>
+    <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        // html 태그가 모두 로딩되는 시점에 발행하는 이벤트
+         $(document).ready(function() {
+            // hide() : jquery에서 지원하는 에니메이션 메서드, 화면에서 숨김
+            // show() : jquery에서 지원하는 에니메이션 메서드, 화면에 출력
+            $("ans").hide();  // ans 태그를 모두 숨김
+            // p.q1 : p태그이면서 클래스명이 q1인 태그를 선택
+            $("p.q1").click(function() {
+                $("ans.q1").show();  
+            });
+            $("ans.q1").click(function() {
+                // this : 자바스크립트 내에서 자기 자신을 뜻하는 키워드 
+                // 현재는 ans태그이면서 클래스명이 q1인 태그를 말하고 있음
+                $(this).hide();
+            });
+            
+            $("p.q2").click(function() {
+                $("ans.q2").show();
+            })
+            $("ans.q2").click(function () {
+                $(this).hide();
+            });
+        });
+    </script>
+</head>
+<body>
+    <h2>질문1 : 대한민국의 수도는 어디입니까?</h2>
+    <p class="q1">정답보기</p>
+    <ans class="q1">대한민국의 수도는 <strong>서울</strong>입니다.</ans>
+    <br><br>
+    <h2>질문2 : 대한민국의 국보 1호는 무엇입니까?</h2>
+    <p class="q2">정답보기</p>
+    <ans class="q2">대한민국의 국보 1호는 <strong>숭례문</strong>입니다.</ans>
+</body>
+</html>

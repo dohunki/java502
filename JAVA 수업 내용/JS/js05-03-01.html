@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 5일차 3번</title>
+    <script>
+        //함수의 4가지 타입
+            /*
+            1. 매개변수와 반환값이 모두 없는 함수
+            연산에 필요한 변수를 함수 내부에서 선언하고 사용하는 형태
+            연산 후 출력도 함수 내부에서 진행함
+            실행되는 결과가 동일한 경우가 많다.
+                선언
+                function 함수명 () {
+                    함수 호출 시 실행될 코드...
+                }
+                실행, 호출
+                함수명();
+            */
+
+        function add1() {
+            var a= 10;
+            var b= 20;
+            var c= a+ b;
+            console.log("1.매개변수와 반환값이 모두 없는 함수 : "+ c);
+            document.write("1.매개변수와 반환값이 모두 없는 함수 : "+ c+ "<br>");
+        }
+        add1();
+
+        // console.log("\n----------------------------------\n");
+        document.write("<br>----------------------------------<br>");
+        
+
+            /*
+            2. 매개변수는 존재하고, 반환값이 없는 함수
+            매개변수 : 함수 내부 연산에 사용되기 위해서 전달되어지는 데이터, 전달되는 데이터에 따라 결과가 달라짐
+            매개변수는 해당 함수 내에서 선언된 것과 동일하기 때문에 함수 외부에서 사용할 수 없음
+                선언
+                function 함수명 (매개변수1, 매개변수2, ...) {
+                    함수 호출 시 실행될 코드...
+                }
+                실행, 호출
+                함수명(매개변수1, 매개변수2, ...);
+            */
+        function add2(a, b) {
+            var c= a+ b;
+            // console.log("2.매개변수는 존재하고, 반환값이 없는 함수 : "+ c);
+            document.write("2.매개변수는 존재하고, 반환값이 없는 함수 : "+ c+ "<br>");
+        }
+        add2(10, 20);
+        add2(100, 200);
+
+        // console.log("\n----------------------------------\n");
+        document.write("<br>----------------------------------<br>");
+
+            /*
+            3. 매개변수는 없고, 반환값은 존재하는 함수
+            반환값 : return 키워드를 통해서 해당 함수
+                선언
+                function 함수명 () {
+                    함수 호출 시 실행될 코드...
+                    return 반환값;
+                }
+                실행, 호출
+                var 변수명= 함수명();
+            */
+        function add3() {
+            var a= 10;
+            var b= 20;
+            var c= a+ b;
+
+            return c; // return을 실행하면 결과값 c 를 함수 외부로 반환해 준다. (위치에 따라 결과값이 변한다.)
+            
+            // console.log("3.매개변수는 없고, 반환값은 존재하는 함수 : "+ c); 
+            document.write("3.매개변수는 없고, 반환값은 존재하는 함수 : "+ c+ "<br>");
+        }
+        add3();
+        var result= add3(); // 변수 result에 함수 add3()의 결과값을 저장하여 활용할 수 있다.
+        // console.log("3.return을 통해서 반환받은 데이터 : "+ result);
+        document.write("3.return을 통해서 반환받은 데이터 : "+ result+ "<br>");
+
+
+        // console.log("\n----------------------------------\n");
+        document.write("<br>----------------------------------<br>");
+        
+
+            /*
+            4. 매개변수와 반환값이 모두 존재하는 함수
+                선언
+                function 함수명 (매개변수1, 매개변수2, ...) {
+                    함수 호출 시 실행될 코드...
+                    return 반환값;
+                }
+                실행, 호출
+                var 변수명= 함수명(매개변수1, 매개변수2, ...);
+            */
+        function add4(a, b) {
+            var c= a+ b;
+            return c;
+            // console.log("4.매개변수와 반환값이 모두 존재하는 함수 : "+ c);
+            document.write("4.매개변수와 반환값이 모두 존재하는 함수 : "+ c+ "<br>");
+        }
+        add4(10, 20);
+        // console.log("4.return을 통해서 반환받은 데이터 : "+ add4(10, 20));
+        document.write("4.return을 통해서 반환받은 데이터 : "+ add4(10, 20)+ "<br>");
+        
+        var result= add4(100, 200); 
+        // console.log("4.return을 통해서 반환받은 데이터 : "+ result);
+        document.write("4.return을 통해서 반환받은 데이터 : "+ result+ "<br>");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

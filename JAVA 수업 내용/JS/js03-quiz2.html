@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 문제 3) for 문을 이용하여 1 ~ 100까지의 숫자를 출력하는 프로그램을
+        작성하세요.
+        */
+       for (var i=1; i<=10; i++) {
+            console.log(i)
+       }
+      
+       console.log("/n/n -------------------------------------- /n/n")
+        /* 문제 4) for 문을 이용하여 1 ~ 10까지의 숫자를 모두 합하여 화면에 
+        출력하는 프로그램을 작성하세요.
+        for문 외부에 데이터를 저장하기 위한 변수가 필요함
+        */
+        for (var sum=0, i=1; i<=10; ++i) {
+           sum+= i
+       }
+       console.log("1부터 10까지의 합은 : "+ sum +" 입니다.")
+
+       console.log("/n/n -------------------------------------- /n/n")
+
+       var result= 0; /* 계산 결과를 저장할 변수가 필요함, 
+                        undefined 타입과 숫자 타입은 연산이 불가능함
+                        변수 result에 숫자 타입의 데이터를 저장하여 
+                        result의 데이터 타입을 숫자형 데이터 타입으로 변경*/
+       for (var i=1; i<=10; ++i) {
+           result= result+ i
+       }
+       console.log("1부터 10까지의 합은 : "+ result +" 입니다.")
+
+       console.log("/n/n -------------------------------------- /n/n")
+
+       /* 문제 5) 사용자 입력과 for문을 사용하여 지정한 단수의 구구단을 출력하는 
+       프로그램을 작성하세요
+       출력형태 : 5*1=5
+       */
+
+       var dan= prompt("출력할 구구단의 단수를 입력해 주세요");
+       dan= Number(dan);
+
+        for (var i=1; i<=9; i++) {
+            console.log(dan+ "*"+i+"="+ dan*i )
+        }
+
+       var dan= prompt("출력할 구구단의 단수를 입력해 주세요");
+       dan= Number(dan);
+
+       if(!isNaN(dan)) {
+           for (var i=1; i<=9; i++) {
+               console.log(dan+ "*"+i+"="+ dan*i )
+            }
+        }
+        else {
+            alert("숫자를 입력해 주세요.")
+            prompt("출력할 구구단의 단수를 입력해 주세요");
+        }
+
+    //    console.log("/n/n -------------------------------------- /n/n")
+       document.write("<br> -------------------------------------- <br>")
+
+    //    var num= prompt("2에서 9사이의 구구단의 단수를 입력해 주세요");
+    //    num= Number(num);
+    //    if(!isNaN(num)) {
+    //        if(num>=2 && num<=9) {
+    //             for (var i=1; i<=9; i++) {
+    //            console.log(num+ "*"+i+"="+ num*i )
+    //             }
+    //         }
+    //         else {
+    //             alert("잘못 입력하였습니다.")
+    //             prompt("2에서 9사이의 구구단의 단수를 입력해 주세요");
+    //         }
+
+    //     }
+    //     else {
+    //         alert("숫자를 입력해 주세요.")
+    //         prompt("2에서 9사이의 구구단의 단수를 입력해 주세요");  
+    //         // 이 부분에서 처음으로 돌아가는 명령어는?
+    //     }
+       
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

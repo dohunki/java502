@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 6일차 2번파일</title>
+    <script src= "./lib/jquery/jquery-3.6.0.js"></script>
+
+    <!-- <script>
+        // html 태그 로딩 이전에 자바스크립트 이벤트가 동작할 경우
+        var btn= document.querySelector("#btn");
+        btn.addEventListener("click", function() {
+            alert("클릭 이벤트 발생")
+        });
+    </script> -->
+
+    <script>
+
+        // onload를 사용한 html 로딩 후 자바스크립트 실행
+        // html 태그 및 모든 리소스를 로딩한 후 이벤트 동작
+        // 외부 리소스가 로딩에 문제가 발생할 경우 해당 리소스가 로딩되기 전까지 이벤트가 동작하지 않음
+        // window.onload= function() {
+        //     var btn= document.querySelector("#btn");
+        //     btn.addEventListener("click", function() {
+        //         alert("클릭 이벤트 발생");
+        //     });
+        // }
+
+        
+        // addEventListener를 사용한 html 로딩 후 자바스크립트 실행
+        window.addEventListener("DOMContentloaded", function() {
+            var btn= document.querySelector("#btn");
+            btn.addEventListener("click", function() {
+                alert("클릭 이벤트 발생");
+            });
+        });
+        
+        // jquery를 이용한 html 로딩 후 자바스크릷트 실행
+        // jquery의 ready 이벤트는 addEventListener를 사용한 것과 동일한 방식으로 동작됨
+        // $(document).ready(function() {
+
+        //     var btn= document.querySelector("#btn");
+        //     btn.addEventListener("click", function() {
+        //         alert("클릭 이벤트 발생");
+        //     });
+
+        //     // $("#btn").on("click", function() {
+        //     //     alert("클릭 이벤트 발생");
+        //     // });
+
+        // })
+    </script>
+</head>
+<body>
+    <button type="button" id="btn">클릭 시 이벤트 발생</button>
+</body>
+</html>

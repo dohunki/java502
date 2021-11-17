@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>z-index 프로퍼티</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            position: absolute;
+        }
+
+        .red {background: red; left: 50px; top: 50px;}
+        .orange {background: orange; left: 100px; top: 100px;}
+        .yellow {background: yellow; left: 150px; top: 150px;}
+        .green {background: green; left: 200px; top: 200px; z-index: 10;}
+        .blue {background: blue; left: 250px; top: 250px;}
+        .darkblue {background: darkblue; left: 300px; top: 300px; z-index: 999;}
+        .purple {background: purple; left: 350px; top: 350px;}
+        
+    </style>
+</head>
+<body>
+    <div class="box red"></div>
+    <div class="box orange"></div>
+    <div class="box yellow"></div>
+    <div class="box green"></div>
+    <div class="box blue"></div>
+    <div class="box darkblue"></div>
+    <div class="box purple"></div>
+</body>
+</html>

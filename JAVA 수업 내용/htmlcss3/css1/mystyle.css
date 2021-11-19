@@ -1,6 +1,6 @@
- <style>
+
         body{
-            background-color: linen;
+            background-color: lightcyan;
             color: blueviolet;
             margin-left: 30px;
             margin-right: 30px;
@@ -9,15 +9,14 @@
         h3 {
             text-align: center;
             color: darkred;
+            font-size: 30px;
         }
 
         hr {
-            border: Spx solid yellowgreen;
+            border: 5px solid yellow;
         }
 
         span {
             color: blue;
             font-size: 20px;
         }
-
-    </style>

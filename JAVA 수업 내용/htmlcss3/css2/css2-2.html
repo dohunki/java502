@@ -12,27 +12,36 @@
     <style>
         body {
             font-family: "Times New Roman", Serif; 
-            font-size: large;
+            font-size: 20px;
         }
         h3 {
-            font: italic bold 40px consolas, sans-serif;
+            font: italic bold 40px consolas, monospace;
+            /* 단축속성은 기울기, 두께, 크기, 글꼴(글꼴1, 글꼴2, ... : 적용순서) 순으로 작성*/
         }
     </style>
 </head>
 <body>
     <h3>Consolas font</h3>
     <hr>
-    <p style="font-weight: 900;">font-weight 900</p>
-    <p style="font-weight:1900;">font-weight 100</p>
-    <p style="font-style: italic;"> Italic Style</p>
-    <p style="font-style: oblique;"> Oleque Style</p>
+    <p style="font-weight: 900;">font-weight 900 제일 두꺼운 두께, serif 바탕체</p>
+    <p style="font-weight: 900; font-family: sans-serif;">font-weight 900 제일 두꺼운 두께, sans-serif 고딕체</p>
+    <p style="font-weight: 400;">font-weight 400 기본값, serif 바탕체</p>
+    <p style="font-weight: 400; font-family: monospace;">font-weight 400 기본값, monospace 고정너비 글꼴</p>
+    <p style="font-weight: 100;">font-weight 100 제일 얇은 두께, serif 바탕체</p>
+    <p style="font-weight: 100; font-family: cursive;">font-weight 100 제일 얇은 두께, cursive 필기체</p>
+    <p style="font-style: normal;"> Normal Style 기본 기울기</p>
+    <p style="font-style: italic;"> Italic Style 이탤릭체</p>
+    <p style="font-style: oblique;"> Oleque Style 기울어진 글자</p>
 
-    <p>현재 크기의 <span style="font-size: 1.5em;">1.5배 </span> 크기로</p>
+    <p>상위(em) 크기(20px)의 <span style="font-size: 1.5em;">1.5배 </span> 크기로</p>
 
-    <p>현재 크기의 <span style="font-size: 2em;">2배 m
-        <span style="font-size: 2em">2배의 2배</span></span> 크기로</p>
+    <p>상위(em) 크기(20px)의 <span style="font-size: 2em;">2배 
+        <span style="font-size: 2em; color: blueviolet;"> 상위(em) 2배의 2배</span></span> 크기로</p>
 
-    <p>현재 크기의 <span style="font-size: 2rem;">2배 
-        <span style="font-size: 2em">2배의 2배</span></span> 크기로</p>
+    <p>최상위(rem) 크기(10px)의 <span style="font-size: 2rem;">2배 
+        <span style="font-size: 2em; color: blue;">최상위(em) 2배의 2배</span></span> 크기로</p>
+
+    <p>최상위(rem) 크기(10px)의 <span style="font-size: 2rem;">2배 
+        <span style="font-size: 2rem; color: red;">최상위(rem) 크기의 2배</span></span> 크기로</p>
 </body>
 </html>

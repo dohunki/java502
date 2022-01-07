@@ -23,7 +23,7 @@ header {
 }
 
 .search {
-  background-color: transparent; /* 투명하게 바탕색이 나타난다.*/
+  background-color: transparent; /*투명하게 바탕색이 나타남*/
   border: 2px solid var(--primary-color);
   border-radius: 50px;
   font-family: inherit;
@@ -31,11 +31,11 @@ header {
   padding: 0.5rem 1rem;
   color: #fff;
 }
-/* 인풋창안에 미리 표시하는 글씨 */
+/* 인풋창안의 미리 표시하는 글씨 */
 .search::placeholder {
   color: #7378c5;
 }
-/* 입력창을 클릭했을 때 */
+/* 입력창을 클릭했을때 */
 .search:focus {
   outline: none;
   background-color: var(--primary-color);
@@ -43,7 +43,7 @@ header {
 
 main {
   display: flex;
-  flex-wrap: wrap; /* 자동으로 줄맞추어 내려옴 */
+  flex-wrap: wrap; /*자동으로 줄맞춰서 내려옴*/
   justify-content: center;
 }
 
@@ -82,7 +82,7 @@ main {
   border-radius: 3px;
   font-weight: bold;
 }
-/* 클래스 점수에 따라 색을 다르게 입력 */
+/* 클래스를 점수에 따라 색을 다르게 입력 */
 .movie-info span.green {
   color: lightgreen;
 }
@@ -103,9 +103,10 @@ main {
   bottom: 0;
   right: 0;
   max-height: 100%;
-  transform: translateY(101%); /* 아래(Y)로 101% 이동 */
+  transform: translateY(101%); /* 아래로 101%이동 */
   overflow-y: auto;
-  transition: transform 0.3s ease-in; /* 변화하는 시간, 부드럽게*/
+  /* 변화하는 시간 */
+  transition: transform 0.4s ease-in;
 }
 
 .movie:hover .overview {

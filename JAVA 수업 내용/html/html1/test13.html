@@ -1,34 +1,45 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>img 태그 사용하기</title>
     <style>
-        #pengsuImg {
-            width: 200px;
-            height: 300px;
-        }
+      #pengsuImg {
+        width: 100px;
+        height: 200px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h3>이미지 삽입</h3>
-    <hr>
+    <hr />
     <p>펭수의 사진입니다.</p>
     <!-- html 태그인 img 태그의 width, height 속성을 사용하여 크기를 설정 -->
     <!-- img태그의 width, height는 픽셀 기반이라 반응형 웹으로 동작하지 않음 -->
-    <img src="펭수1.jpg" alt="펭수 사진 1번" width="400" height="300">
+    <img src="펭수1.jpg" alt="펭수 사진 1번" width="400" height="300" />
     <!-- css의 width, height 속성을 사용하여 크기를 설정 -->
     <!-- css의 width, height 속성은 여러가지 단위를 사용할 수 있어서 반응형 웹에 대응할 수 있음 -->
     <!-- css의 width, height 속성은 어떤 태그에 사용해도 동일한 사용방법을 제공함 -->
-    <img src="펭수1.jpg" alt="펭수 사진 1번" style="width: 400px; height: 300px;">
-    <img src="펭수.jpg" alt="펭수 사진 1번" style="width: 400px; height: 300px;">
-    <hr>
-    <img src="펭수1.png" alt="펭수 사진 2번" width="200" height="300">
-    <img src="펭수1.png" alt="펭수 사진 2번" style="width: 200px; height: 
-    300px;">
+    <img
+      src="펭수1.jpg"
+      alt="펭수 사진 1번"
+      style="width: 400px; height: 300px;"
+    />
+    <img
+      src="펭수.jpg"
+      alt="펭수 사진 1번"
+      style="width: 400px; height: 300px;"
+    />
+    <hr />
+    <img src="펭수1.png" alt="펭수 사진 2번" width="200" height="300" />
+    <img
+      src="펭수1.png"
+      alt="펭수 사진 2번"
+      style="width: 200px; height: 200px;"
+    />
 
-    <img src="펭수1.png" alt="펭수 사진 2번, css사용" id="pengsuImg">
-</body>
+    <img src="펭수1.png" alt="펭수 사진 2번, css사용" id="pengsuImg" />
+  </body>
 </html>

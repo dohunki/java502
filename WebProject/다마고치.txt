@@ -1,0 +1,212 @@
+public class Poket {
+	public String race; // 종족
+	public String name; // 캐릭터 이름
+	public int age; // 나이
+	public int power; // 파워
+	public int energy; // 에너지
+	int cnt;
+	
+	public Poket() // 생성자
+	{
+		System.out.println("시작");
+	}
+	
+	public void eat() // 밥먹기
+	{
+		energy += 15; // 에너지 15씩 증가
+		cnt++; // cnt는 1씩 증가
+		aging(); // aging()매소드를 호출
+	}
+	
+	public void sleep() // 자기
+	{
+		energy += 5;
+		cnt++;
+		aging();
+	}
+	
+	public void exercise() // 운동
+	{
+		energy -= 10;
+		power += 10;
+	}
+	
+	public void aging() // 나이 먹기
+	{
+		if(cnt > 3) // cnt가 3보다 커지면
+		{
+			age++; // 나이를 먹는다
+			cnt = 0;
+		}
+	}
+ 
+	public void attack() // 공격하기
+	{
+		energy -= 15;
+		power += 20;
+	}
+	
+	public void print() // 현재 상태출력 하기
+	{
+		System.out.println("나이 : " +age);
+		System.out.println("파워 : " +power);
+		System.out.println("에너지 : " +energy);
+	}
+}
+
+//
+public class Lee extends Poket { // Poket 클래스로 부터 상속한다.
+	public int cnt;
+	public Lee(String name)
+	{
+		// Poket에서 가져왔기 때문에 따로 형태를 지정해주지 않아도된다.
+		this.name = name; // 이름으로 초기화
+		race = "Leesanghae";  // 종족은 이상해로 초기화
+		age = 0; // 나이는 0으로 초기화
+		power = 150; // 파워는 150으로 초기화
+		energy = 200; // 에너지는 200으로 초기화
+		cnt = 0; // cnt는 0
+		System.out.println("이상해씨가 만들어졌습니다.");
+	}
+ 
+	public void eat() // 밥먹기
+	{
+		energy += 15; // 에너지 15씩 증가
+		cnt++; // cnt는 1씩 증가
+		aging(); // aging()매소드를 호출
+	}
+	
+	public void sleep() // 자기
+	{
+		energy += 5;
+		cnt++;
+		aging();
+	}
+	
+	public void exercise() // 운동
+	{
+		energy -= 10;
+		power += 10;
+	}
+	
+	public void aging() // 나이먹기
+	{
+		if(cnt > 3)
+		{
+			age++;
+			cnt = 0;
+		}
+	}
+ 
+	public void attack() // 공격
+	{
+		energy -= 15;
+		power += 20;
+	}
+	
+	public void print() // 마찬가지로 상태출력
+	{
+		System.out.println("나이 : " +age);
+		System.out.println("파워 : " +power);
+		System.out.println("에너지 : " +energy);
+	}	
+}
+
+//
+public class Gobook extends Poket {
+	public int cnt;
+	public Gobook (String name)
+	{
+		this.name = name;
+		race = "Gobook";
+		age = 0;
+		power = 50;
+		energy = 150;
+		cnt = 0;
+		System.out.println("꼬북이가 만들어졌습니다.");
+	}
+}
+
+//
+public class Picachu extends Poket {
+	public int cnt;
+	public Picachu(String name)
+	{
+		this.name = name;
+		race = "Picachu";
+		age = 0;
+		power = 100;
+		energy = 300;
+		cnt = 0;
+		System.out.println("피카츄가 만들어졌습니다.");
+	}
+}
+
+//
+public class ExcMain {
+ 
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in); // 너무나도 익숙한 Scanner
+		Poket p = null; // Poket 객체 선언 및 null값으로 초기화
+		System.out.println("포켓몬을 선택하시오.");
+		System.out.println("1. 피카츄\n2. 이상해씨\n3. 꼬부기");
+				int x = sc.nextInt(); // 종족값을 입력받음
+				System.out.println("이름을 입력하시오.");
+				String name = sc.next(); // 이름을 입력받음
+				
+				if(x==1)
+					p = new Picachu(name);
+				else if(x==2)
+					p = new Lee(name);
+				else if(x==3)
+					p = new Gobook(name);
+				boolean flag = true;
+				
+				while(flag)
+				{
+					System.out.println("메뉴");
+					System.out.println("1. 밥\n2. 잠\n3. 운동\n4. 공격\n5. 끝");
+					x = sc.nextInt();
+					switch(x)
+					{
+					case 1:
+						o.eat();
+						o.print();
+						break;
+						
+					case 2:
+						o.sleep();
+						o.print();
+						break;
+						
+					case 3:
+						o.exercise();
+						o.print();
+						if(o.energy <= 0)
+						{
+							System.out.println("게임 종료");
+							flag = false;
+						}
+						break;
+						
+					case 4:
+						o.attack();
+						o.print();
+						if(o.energy <= 0)
+						{
+							System.out.println("게임 종료");
+							flag = false;
+						}
+						break;
+						
+					case 5:
+					flag = false;
+					}
+				}
+	}
+}
+}
+
+//
+
+

@@ -1,0 +1,652 @@
+package movieGame;
+
+import java.util.InputMismatchException;
+
+import lankTest.GameBoy;
+import user.UserManager;
+
+public class Game extends UserManager {
+
+	Util util = new Util();
+
+	String name;
+	int point;
+	final int check = 2;
+	
+	GameBoy gb = new GameBoy(); //??‚¹ ?¸ìŠ¤?´ìŠ¤ ?ì„± 
+
+	// ë©”ì¸?œì‘
+	public void StartWord(String id) {
+
+		this.name = id;
+		this.point = userinfo.get(id).getScore();
+
+		System.out.println("=====================================");
+		System.out.println("	      MOVIE QUIZ");
+		System.out.println("=====================================");
+		System.out.println(id + "???˜ì˜?©ë‹ˆ??");
+		System.out.println("=====================================");
+		System.out.println("  - ê²Œì„   ?¤ëª… -");
+		System.out.println("?¥ë¥´ë¥?? íƒ ??ì£¼ì–´ì§€??ì´ˆì„±???•ë‹µ?´ë¼ê³?);
+		System.out.println("?ê°?˜ëŠ” ?¨ì–´ë¥??…ë ¥?˜ì‹œë©??©ë‹ˆ??");
+		System.out.println("ë¬¸ì œ??60ì´ˆê? ì£¼ì–´ì§€ë©?");
+		System.out.println("?•ë‹µ?€ ?„ì–´?°ê¸°ê°€ ë§ì•„?¼í•©?ˆë‹¤.");
+	}
+
+	// ?í™” ? íƒ ë©”ì†Œ??
+	public int showprint() {
+
+		int choice = 0;
+		System.out.println("=====================================");
+		System.out.println("	        ?í™”?¥ë¥´ ? íƒ");
+		System.out.println("=====================================");
+		System.out.println(Util.KOREA_MOVIE + ") ?œêµ­?í™” ");
+		System.out.println(Util.world_MOVIE + ") ?¸êµ­?í™”");
+		System.out.println(Util.ani_MOVIE + ") ? ë‹ˆë©”ì´???í™”");
+		System.out.println("4) ë©”ì¸");
+		System.out.println("=====================================");
+
+		try {
+			choice = util.key.nextInt();
+		} catch (InputMismatchException e) {
+
+		}
+		util.key.nextLine(); // ë²„í¼?œê±°
+
+		return choice;
+
+	}
+
+	// ?œì´??? íƒ ë©”ì†Œ??
+	public int Level() {
+		
+		
+		System.out.println("=====================================");
+		System.out.println("	     ?œì´?„ë? ? íƒ?´ì£¼?¸ìš”.");
+		System.out.println("=====================================");
+		System.out.println("1) ì´ˆê¸‰  2) ì¤‘ê¸‰  3) ê³ ê¸‰  4) ?¤ë¡œê°€ê¸?);
+		System.out.println("<ì´ˆê¸‰> 1~30??");
+		System.out.println("<ì¤‘ê¸‰> 30~50??);
+		System.out.println("<ê³ ê¸‰> 50~70??);
+		System.out.println("?€?¥ë˜???ìˆ˜???œë¤?€?¥ì…?ˆë‹¤!");
+		System.out.println("???’ì? ?œì´?„ì— ?„ì „?´ë³´?¸ìš”!");
+		int cho = 0;
+		try {
+			cho = util.key.nextInt();
+		} catch (InputMismatchException e) {
+		}
+		util.key.nextLine();
+		return cho;
+
+	}
+
+	// ?¤ë¥˜ì²˜ë¦¬ ?¬ìš© ë©”ì†Œ??
+	public void Print() {
+		System.out.println("======================");
+		System.out.println("1~3?¬ì´???«ìë¥??…ë ¥?´ì£¼?¸ìš”!");
+		System.out.println("======================");
+	}
+
+	// ?¤ë¥˜ì²˜ë¦¬ ?¬ìš© ë©”ì†Œ??
+	public void Print2() {
+		System.out.println("======================");
+		System.out.println("1~4?¬ì´???«ìë¥??…ë ¥?´ì£¼?¸ìš”!");
+		System.out.println("======================");
+	}
+
+	// ?€ë¦°ë‹µ ì¶œë ¥ë©”ì†Œ??
+	public void WrongAnswer() {
+		System.out.println("?€?¸ìŠµ?ˆë‹¤. ?¤ì‹œ?ê°?´ë³´?¸ìš”.");
+	}
+
+	// ?ŒíŠ¸ ì¶œë ¥ë©”ì†Œ??
+	public void answer2() {
+		System.out.println("?ŒíŠ¸ê°€ ?„ìš”?˜ì‹œë©?\"?ŒíŠ¸\"ë¥??…ë ¥?´ì£¼?¸ìš”. ");
+		System.out.println("?•ë‹µ???…ë ¥?´ì£¼?¸ìš”!");
+	}
+
+//	public void GoMain() {
+//		// ë©”ì¸
+//	}
+	
+	// ? ì?-ê²Œì„?¬ì¸???€??ë©”ì„œ??
+	public void savePoint(String name, int point) {
+		gb.name=name;
+		gb.point=point;
+		gb.saveData(check);
+	}
+
+}
+
+//
+package movieGame;
+
+public class LevelOne extends Game {
+
+	Time time = new Time();
+	
+
+	// ?œêµ­?í™” ë¬¸ì œ1
+	public void Korea1(String id) {
+		System.out.println("?œì´??ì´ˆê¸‰ ë¬¸ì œ?…ë‹ˆ??");
+		System.out.println("[?‡ã…‡???‡ë„]");
+		answer2();//ì¶œë ¥ë©”ì†Œ??
+	
+		time.Timer();
+
+		while (true) {
+
+			String answer = util.key.nextLine();
+
+			if (answer.equals("?°ì• ???¨ë„")) {
+				time.cancel();
+				answer(id);//?•ë‹µ??ì¶œë ¥ ë©”ì†Œ??
+				break;
+			} else if (answer.equals("?ŒíŠ¸")) {
+				System.out.println("<?ŒíŠ¸ : ì¶œì—°ë°°ìš° ?´ë?ê¸? ê¹€ë¯¼í¬>");
+			} else if (answer.equals("??ë°”ë³´??)) {
+				break;
+			} else {
+				WrongAnswer();//?€?¸ì„??ì¶œë ¥ ë©”ì†Œ??
+
+			}
+		}
+	}
+
+	// ?¸êµ­?í™” ë¬¸ì œ1
+	public void World1(String id) {
+		System.out.println("?œì´??ì´ˆê¸‰ ë¬¸ì œ?…ë‹ˆ??");
+		System.out.println("[?¹ë¼?¹ã„·]");
+		answer2();//ì¶œë ¥ ë©”ì†Œ??
+		time.Timer();
+
+		while (true) {
+
+			
+			String answer = util.key.nextLine();
+			if (answer.equals("?¼ë¼?œë“œ")) {
+				time.cancel();
+				answer(id);//?•ë‹µ ë©”ì†Œ??
+				break;
+			} else if (answer.equals("?ŒíŠ¸")) {
+				System.out.println("<?ŒíŠ¸ : ?¥ë¥´ ë®¤ì?ì»??œë¼ë§?ë©œë¡œ/ë¡œë§¨??");
+			} else if (answer.equals("??ë°”ë³´??)) {
+				break;
+			} else {
+				WrongAnswer(); //?€?¸ì„??ì¶œë ¥ ë©”ì†Œ??
+
+			}
+		}
+	}
+
+	// ? ë‹ˆ?í™” ë¬¸ì œ1
+	public void ani1(String id) {
+		System.out.println("?œì´??ì´ˆê¸‰ ë¬¸ì œ?…ë‹ˆ??");
+		System.out.println("[?´ã…???Šì•„??");
+		answer2();//ì¶œë ¥ ë©”ì†Œ??
+		time.Timer();
+
+		while (true) {
+			String answer = util.key.nextLine();
+			if (answer.equals("?ˆëª¨ë¥?ì°¾ì•„??)) {
+				time.cancel();
+				answer(id); //?•ë‹µ ë©”ì†Œ??
+				break;
+			} else if (answer.equals("?ŒíŠ¸")) {
+				System.out.println("<?ŒíŠ¸ : ë¬¼ê³ ê¸?");
+			} else if (answer.equals("??ë°”ë³´??)) {
+				break;
+			} else {
+				WrongAnswer(); // ?€?¸ì„??ë©”ì†Œ??
+			}
+		}
+	}
+	// 1??30???œë¤ ?ìˆ˜
+		public int Point(int num) {
+			num = (int) (Math.random() * 30 + 1);
+			return num;
+		}
+		// ?•ë‹µ ì¶œë ¥ë©”ì†Œ??
+		public void answer(String id) {
+			System.out.println("?•ë‹µ?…ë‹ˆ??");
+			
+			savePoint(id, Point(0));
+			
+
+		}
+
+	
+
+}
+
+//
+package movieGame;
+
+
+public class LevelThree extends Game {
+
+	Time time = new Time();
+
+	// ?œêµ­?í™” ë¬¸ì œ3
+	public void Korea3(String id) {
+		System.out.println("?œì´??ê³ ê¸‰ ë¬¸ì œ?…ë‹ˆ??");
+		System.out.println("[?‡ã…‹?Œã„·?ã„±]");
+		answer2();//ì¶œë ¥ ë©”ì†Œ??
+		time.Timer();
+
+		while (true) {
+			String answer = util.key.nextLine();
+			if (answer.equals("?°ì»´ ???™ë§‰ê³?)) {
+				time.cancel();
+				answer(id);//?•ë‹µ ë©”ì†Œ??
+				break;
+			} else if (answer.equals("?ŒíŠ¸")) {
+				System.out.println("<?ŒíŠ¸ : ?¤ì›Œ???„ìŸ, ?ì½˜>");
+			} else if (answer.equals("??ë°”ë³´??)) {
+				break;
+			} else {
+				WrongAnswer();//?€?¸ì„??ì¶œë ¥ ë©”ì†Œ??
+
+			}
+		}
+	}
+
+	// ?¸êµ­?í™” ë¬¸ì œ3
+	public void World3(String id) {
+		System.out.println("?œì´??ê³ ê¸‰ ë¬¸ì œ?…ë‹ˆ??");
+		System.out.println("[?Šã„¹?‡ã…Š?‹ã„¹?±ã…ˆ]");
+		answer2();//ì¶œë ¥ë©”ì†Œ??
+		time.Timer();
+
+		while (true) {
+			String answer = util.key.nextLine();
+			if (answer.equals("ì°°ë¦¬?€ ì´ˆì½œë¦?ê³µì¥")) {
+				time.cancel();
+				answer(id);//?•ë‹µ ë©”ì†Œ??
+				break;
+			} else if (answer.equals("?ŒíŠ¸")) {
+				System.out.println("<?ŒíŠ¸ : ì¶œì—°ë°°ìš° ì¡°ë‹ˆ ??");
+			} else if (answer.equals("??ë°”ë³´??)) {
+				break;
+			} else {
+				WrongAnswer();//?€?¸ì„??ì¶œë ¥ ë©”ì†Œ??
+
+			}
+		}
+	}
+
+	// ? ë‹ˆ?í™” ë¬¸ì œ3
+	public void ani3(String id) {
+		System.out.println("?œì´??ê³ ê¸‰ ë¬¸ì œ?…ë‹ˆ??");
+		System.out.println("[?‡ã…‡?…ã…‡?‡ã…ˆ]");
+		answer2();//ì¶œë ¥ë©”ì†Œ??
+		time.Timer();
+
+		while (true) {
+
+			String answer = util.key.nextLine();
+
+			if (answer.equals("?„ì´?¤ì—?´ì?")) {
+				time.cancel();
+				answer(id);//?•ë‹µ ë©”ì†Œ??
+				break;
+			} else if (answer.equals("?ŒíŠ¸")) {
+				System.out.println("<?ŒíŠ¸ : ?„í† ë¦?");
+			} else if (answer.equals("??ë°”ë³´??)) {
+				break;
+			} else {
+				WrongAnswer();//?€?¸ì„??ì¶œë ¥ ë©”ì†Œ??
+
+			}
+		}
+	}
+
+	// 50~70???œë¤ ?ìˆ˜
+	public int Point3(int num3) {
+		num3 = (int) (Math.random() * (21) + 50);
+		return num3;
+	}
+	// ?•ë‹µ ì¶œë ¥ë©”ì†Œ??
+			public void answer(String id) {
+				System.out.println("?•ë‹µ?…ë‹ˆ??");
+				
+				savePoint(id, Point3(0));
+				
+
+			}
+
+}
+
+//
+package movieGame;
+
+public class LevelTwo extends Game {
+
+	Time time = new Time();
+
+	// ?œêµ­?í™” ë¬¸ì œ2
+	public void Korea2(String id) {
+		System.out.println("?œì´??ì¤‘ê¸‰ ë¬¸ì œ?…ë‹ˆ??");
+		System.out.println("[???ã„¹ ?…ã…‡ ?ˆã…‡??");
+		answer2(); // ì¶œë ¥ ë©”ì†Œ??
+		time.Timer();
+
+		while (true) {
+			String answer = util.key.nextLine();
+
+			if (answer.equals("??ë¨¸ë¦¬ ?ì˜ ì§€?°ê°œ")) {
+				time.cancel();
+				answer(id);// ?•ë‹µ ë©”ì†Œ??
+				break;
+			} else if (answer.equals("?ŒíŠ¸")) {
+				System.out.println("<?ŒíŠ¸ : ì¶œì—°ë°°ìš° ?•ìš°??");
+			} else if (answer.equals("??ë°”ë³´??)) {
+				break;
+			} else {
+				WrongAnswer();// ?€?¸ì„??ì¶œë ¥ ë©”ì†Œ??
+
+			}
+		}
+
+	}
+
+	// ?¸êµ­?í™” ë¬¸ì œ2
+	public void World2(String id) {
+		System.out.println("?œì´??ì¤‘ê¸‰ ë¬¸ì œ?…ë‹ˆ??");
+		System.out.println("[?‹ã……??");
+		answer2();// ì¶œë ¥ ë©”ì†Œ??
+		time.Timer();
+
+		while (true) {
+			String answer = util.key.nextLine();
+			if (answer.equals("?¹ìŠ¤ë§?)) {
+				time.cancel();
+				answer(id);// ?•ë‹µë©”ì†Œ??
+				break;
+			} else if (answer.equals("?ŒíŠ¸")) {
+				System.out.println("<?ŒíŠ¸ : ë§¤ë„ˆê°€ ?¬ëŒ??ë§Œë“ ??");
+			} else if (answer.equals("??ë°”ë³´??)) {
+				break;
+			} else {
+				WrongAnswer();// ?€?¸ì„??ì¶œë ¥ ë©”ì†Œ??
+
+			}
+		}
+	}
+
+	// ? ë‹ˆ?í™” ë¬¸ì œ1
+	public void ani2(String id) {
+		System.out.println("?œì´??ì¤‘ê¸‰ ë¬¸ì œ?…ë‹ˆ??");
+		System.out.println("[?‡ã……?‡ã„· ?‡ã…‡]");
+		answer2();// ì¶œë ¥ë©”ì†Œ??
+		time.Timer();
+
+		while (true) {
+			String answer = util.key.nextLine();
+			if (answer.equals("?¸ì‚¬?´ë“œ ?„ì›ƒ")) {
+				time.cancel();
+				answer(id);// ?•ë‹µë©”ì†Œ??
+				break;
+			} else if (answer.equals("?ŒíŠ¸")) {
+				System.out.println("<?ŒíŠ¸ : ê°ì •>");
+			} else if (answer.equals("??ë°”ë³´??)) {
+				break;
+			} else {
+				WrongAnswer();// ?€?¸ì„??ì¶œë ¥ ë©”ì†Œ??
+
+			}
+		}
+	}
+
+	// 30??50???œë¤ ?ìˆ˜
+	public int Point2(int num2) {
+		num2 = (int) (Math.random() * (21) + 30);
+		return num2;
+	}
+
+	// ?•ë‹µ ì¶œë ¥ë©”ì†Œ??
+			public void answer(String id) {
+				System.out.println("?•ë‹µ?…ë‹ˆ??");
+				
+				savePoint(id, Point2(0));
+				
+
+			}
+
+}
+
+//
+package movieGame;
+
+import user.UserManager;
+
+public class MovieGameFlow extends UserManager {
+
+	public static void MovieGameMain(String id) {
+
+		Game game = new Game();
+		LevelOne one = new LevelOne();
+		LevelTwo two = new LevelTwo();
+		LevelThree three = new LevelThree();
+
+		game.StartWord(id);
+		int choice = 0;
+		int cho = 0;
+
+		while (true) {
+			choice = game.showprint();
+			System.out.println(choice);
+			switch (choice) {
+
+			// ?œêµ­?í™”
+			case Util.KOREA_MOVIE:
+
+				while (true) {
+					cho = game.Level();
+
+					switch (cho) {
+
+					case 1:
+						one.Korea1(id);
+						break;
+					case 2:
+						two.Korea2(id);
+						break;
+					case 3:
+						three.Korea3(id);
+						break;
+					case 4:
+						System.out.println("?´ì „?¨ê³„ë¡œëŒ?„ê°‘?ˆë‹¤");
+						break;
+					default:
+						game.Print2();
+						break;
+					}
+					if (cho == 4) {
+
+						break;
+					}
+				}
+				break;
+			// ?¸êµ­?í™”
+			case Util.world_MOVIE:
+
+				while (true) {
+
+					cho = game.Level();
+					switch (cho) {
+					case 1:
+						one.World1(id);
+						break;
+					case 2:
+						two.World2(id);
+						break;
+					case 3:
+						three.World3(id);
+						break;
+					case 4:
+						System.out.println("?´ì „?¨ê³„ë¡œëŒ?„ê°‘?ˆë‹¤");
+						break;
+					default:
+						game.Print2();
+
+						break;
+					}
+					if (cho == 4) {
+
+						break;
+					}
+					break;
+				}
+				break;
+
+			// ? ë‹ˆë©”ì´???í™”
+			case Util.ani_MOVIE:
+
+				while (true) {
+					cho = game.Level();
+					switch (cho) {
+					case 1:
+						one.ani1(id);
+						break;
+					case 2:
+						two.ani2(id);
+						break;
+					case 3:
+						three.ani3(id);
+						break;
+					case 4:
+						System.out.println("?´ì „?¨ê³„ë¡œëŒ?„ê°‘?ˆë‹¤");
+						break;
+					default:
+						game.Print2();
+
+						break;
+					}
+					if (cho == 4) {
+
+						break;
+					}
+					break;
+				}
+				break;
+			case 4:// ë©”ì¸
+				System.out.println("?´ì „ ë©”ë‰´ë¡??Œì•„ê°‘ë‹ˆ??");
+				break;
+			default:
+				game.Print2();
+
+				break;
+
+			}
+			if (choice == 4) {
+				// break;
+				return;
+			}
+
+		}
+	}
+
+}
+
+//
+package movieGame;
+
+import java.util.Timer;
+import java.util.TimerTask;
+
+
+public class Time extends Game {
+	static int count;
+
+	Timer time = new Timer();
+	
+	public void Timer() {
+
+		count = 10;
+
+		TimerTask T = new TimerTask() {
+
+			@Override
+			public void run() {
+				
+//				for(int i =60; i>0; i--) {
+//			         System.out.println(count);
+//			         
+//			         //1ì´ˆë§ˆ???œë²ˆ??ë°˜ë³µ
+//			         try {
+//			            Thread.sleep(10000);
+//			            if(LevelOne.) {
+//			               //ê°’ì´ ?¤ì–´?¤ë©´ ì¹´ìš´?¸ë‹¤?´ì¢…ë£?
+//			               System.out.println("ì¹´ìš´???¤ìš´??ì¤‘ë‹¨?©ë‹ˆ??");
+//			               return;
+//			            }
+//			         } catch (InterruptedException e) {
+//			            // TODO Auto-generated catch block
+//			            e.printStackTrace();
+//			         }
+//			      }
+//			      
+//			      //10ì´ˆê? ì§€?˜ë©´ ì¢…ë£Œ
+//			      System.out.println("?…ë ¥?œê°„??ì´ˆê³¼?´ì„œ ì¢…ë£Œ?©ë‹ˆ??");
+//			      System.exit(0);
+			      
+				
+				
+				if (count < 70)
+					switch (count) {
+					case 10:
+						System.out.println("[50ì´?");
+						break;
+					case 20:
+						System.out.println("[40ì´?");
+						break;
+					case 30:
+						System.out.println("[30ì´?");
+						break;
+					case 40:
+						System.out.println("[20ì´?");
+						break;
+					case 50:
+						System.out.println("[10ì´?");
+						break;
+					case 60:
+						
+						System.out.println("?œê°„?????ìŠµ?ˆë‹¤.");
+						System.out.println("\"??ë°”ë³´??" ë¥??…ë ¥?´ì£¼?¸ìš”!");
+						break;
+					}
+
+				count += 10;
+				
+	
+
+			}
+		};
+
+		time.schedule(T, 10000, 10000);
+		
+
+	}
+	
+	public void cancel() {
+		time.cancel();
+	}
+}
+
+//
+package movieGame;
+
+import java.util.Scanner;
+
+public class Util {
+
+	Scanner key = new Scanner(System.in);
+	
+	public static final int KOREA_MOVIE = 1;
+	public static final int world_MOVIE = 2;
+	public static final int ani_MOVIE = 3;
+	
+	
+}
+

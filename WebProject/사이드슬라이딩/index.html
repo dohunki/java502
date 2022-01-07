@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- 뷰포트: 미디어쿼리 사용 또는 vw, vh를 사용하기 위해 필요함 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>내 프로젝트</title>
+  </head>
+  <body>
+    <!-- 켄테이너 클래스로 wrap(포장) -->
+    <div class="container">
+      <!-- 스타일속성은 자주 쓰진 않지만 여러 이미지를 넣을 경우 더 편함 -->
+      <div
+        class="panel"
+        style="
+          background-image: url('https://cdn.pixabay.com/photo/2021/10/19/10/56/cat-6723256__340.jpg');
+        "
+      >
+        <h3>고양이</h3>
+      </div>
+
+      <div
+        class="panel active"
+        style="
+          background-image: url('https://cdn.pixabay.com/photo/2016/10/19/13/42/eagle-1753002__340.jpg');
+        "
+      >
+        <h3>독수리</h3>
+      </div>
+
+      <div
+        class="panel"
+        style="
+          background-image: url('https://cdn.pixabay.com/photo/2016/11/18/12/14/owl-1834152__340.jpg');
+        "
+      >
+        <h3>올빼이</h3>
+      </div>
+
+      <div
+        class="panel"
+        style="
+          background-image: url('https://cdn.pixabay.com/photo/2015/11/29/13/08/kingfisher-1068684__340.jpg');
+        "
+      >
+        <h3>물총새</h3>
+      </div>
+
+      <div
+        class="panel"
+        style="
+          background-image: url('https://cdn.pixabay.com/photo/2015/07/20/06/47/puppy-852417__480.jpg');
+        "
+      >
+        <h3>멍멍이</h3>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

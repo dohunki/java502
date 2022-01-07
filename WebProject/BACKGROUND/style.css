@@ -1,0 +1,35 @@
+body {
+  /* 폰트, 글자색, 글자 위치, 대소문자, 글자사이 간격, 배경색*/
+  font: 'Raleway', sans-serif;
+  color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  background: linear-gradient(to right, red, yellow); /* Standard syntax */
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h1 {
+  
+  font-family: 'Raleway', sans-serif; /* 폰트 설정 */
+  font-size: 3.5em; /* 3.5배 폰트 */
+  font-weight: 600; /* 글자 굵기 600(100~900) */
+  color: rgba(0, 0, 0, 0.5); /* rgba(레드, 그린, 블루, 투명도) */
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  width: 100%;
+}
+
+h3 {
+  font: 900 1em 'Raleway', sans-serif;
+  color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  text-transform: none;
+  letter-spacing: 0.01em;
+}
